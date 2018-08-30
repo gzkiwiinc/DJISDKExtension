@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8532A08821378F14008BCC84 /* DJISDKExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 8532A08621378F14008BCC84 /* DJISDKExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8532A08F2137954C008BCC84 /* DJIDeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532A08E2137954C008BCC84 /* DJIDeviceHelper.swift */; };
+		8532A08F2137954C008BCC84 /* DJISDKManager+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */; };
 		CEDD008B2A270B813EDAF365 /* Pods_DJISDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C952EE09E10AC625517DE64 /* Pods_DJISDKExtension.framework */; };
 /* End PBXBuildFile section */
 
@@ -18,7 +18,7 @@
 		8532A08321378F14008BCC84 /* DJISDKExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DJISDKExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8532A08621378F14008BCC84 /* DJISDKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJISDKExtension.h; sourceTree = "<group>"; };
 		8532A08721378F14008BCC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8532A08E2137954C008BCC84 /* DJIDeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIDeviceHelper.swift; sourceTree = "<group>"; };
+		8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJISDKManager+Helper.swift"; sourceTree = "<group>"; };
 		B763E7869565DCA034F402A8 /* Pods-DJISDKExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKExtension/Pods-DJISDKExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +67,7 @@
 				8532A08621378F14008BCC84 /* DJISDKExtension.h */,
 				8532A08721378F14008BCC84 /* Info.plist */,
 				8532A0902137956E008BCC84 /* Promise */,
-				8532A08E2137954C008BCC84 /* DJIDeviceHelper.swift */,
+				8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */,
 			);
 			path = DJISDKExtension;
 			sourceTree = "<group>";
@@ -188,7 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8532A08F2137954C008BCC84 /* DJIDeviceHelper.swift in Sources */,
+				8532A08F2137954C008BCC84 /* DJISDKManager+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
