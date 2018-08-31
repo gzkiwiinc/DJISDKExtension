@@ -10,7 +10,6 @@ import PromiseKit
 
 extension DJIMediaManager {
 
-    
     /// Error define by DJISDKExtension for DJIMediaManager
     ///
     /// - deleteFail: fail to delete and the error contains the array of fialed DJIMediaFile.
