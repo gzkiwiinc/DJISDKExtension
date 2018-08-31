@@ -57,11 +57,10 @@ extension DJIMediaManager {
     
     /// Delete media files from storages
     ///
-    /// - Parameter mediaFiles: Media files to delete.
-    /// - Returns: Promise<Void>
-    public func delete(mediaFiles: [DJIMediaFile]) -> Promise<Void> {
+    /// - Throws: return DJIMediaManagerError.deleteFail error if error happened.
+    public func deleteMediaFiles(_ files: [DJIMediaFile]) -> Promise<Void> {
         return Promise { seal in
-            delete(mediaFiles) { (failedFiles, error) in
+            delete(files) { (failedFiles, error) in
                 if let error = error {
                     seal.reject(DJIMediaManagerError.deleteFail(failedFiles: failedFiles, djiError: error))
                 } else {
