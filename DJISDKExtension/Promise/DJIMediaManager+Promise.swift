@@ -10,8 +10,12 @@ import PromiseKit
 
 extension DJIMediaManager {
 
+    
+    /// Error for DJIMediaManager
+    ///
+    /// - deleteFail: fail to delete and the error contains the array of fialed DJIMediaFile.
     public enum DJIMediaManagerError: Error {
-        case deleteFail([DJIMediaFile], Error)
+        case deleteFail(failedFiles: [DJIMediaFile], error: Error)
     }
     
     /// Refreshes the file list of the storage and Returns a copy of the current file list on the internal storage.
@@ -60,7 +64,7 @@ extension DJIMediaManager {
         return Promise { seal in
             delete(mediaFiles) { (failedFiles, error) in
                 if let error = error {
-                    seal.reject(DJIMediaManagerError.deleteFail(failedFiles, error))
+                    seal.reject(DJIMediaManagerError.deleteFail(failedFiles: failedFiles, error: error))
                 } else {
                     seal.fulfill(())
                 }
