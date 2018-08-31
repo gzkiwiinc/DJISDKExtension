@@ -21,7 +21,7 @@ extension DJIMediaManager {
     ///
     /// - Parameter storageLocation: The storage location of the file list to refresh.
     /// - Returns: an array of `DJIMediaFile` objects.
-    public func fetchMediaFileListSnapshotOf(storageLocation: DJICameraStorageLocation) -> Promise<[DJIMediaFile]> {
+    public func fetchMediaFileListSnapshot(storageLocation: DJICameraStorageLocation) -> Promise<[DJIMediaFile]> {
         return Promise { seal in
             refreshFileList(of: storageLocation, withCompletion: { error in
                 switch storageLocation {
