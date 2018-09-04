@@ -48,4 +48,42 @@ extension DJIMediaFile {
             }
         }
     }
+    
+    /// Fetch media file's full resolution data with update progress
+    ///
+    /// - Parameters:
+    ///   - dispatchQueue: dispatchQueue to call
+    ///   - updateProgress: block to show the progress
+    /// - Returns: file data
+    public func fetchFileData(dispatchQueue: DispatchQueue,
+                              updateProgress: @escaping (_ progress: CGFloat) -> Void) -> Promise<Data>
+    {
+        return Promise { seal in
+            var fileData = Data()
+            var previousOffset: UInt = 0
+            fetchData(withOffset: 0, update: dispatchQueue) { (data, isComplete, error) in
+                if let error = error {
+                    seal.reject(error)
+                } else {
+                    if let data = data {
+                        fileData.append(data)
+                        previousOffset = previousOffset + UInt(data.count)
+                    }
+                    if isComplete {
+                        seal.fulfill(fileData)
+                    } else {
+                        let progress = (CGFloat(previousOffset) * 100.0) / CGFloat(self.fileSizeInBytes)
+                        updateProgress(progress)
+                    }
+                }
+            }
+        }
+    }
+    
+    /// Stop fetching the current media file data
+    public func stopFetchFileData() -> Promise<Void> {
+        return Promise {
+            stopFetchingFileData(completion: $0.resolve)
+        }
+    }
 }
