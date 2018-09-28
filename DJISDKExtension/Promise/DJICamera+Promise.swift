@@ -37,7 +37,7 @@ extension DJICamera {
     /// Gets the storage location.
     ///
     /// - Returns: the storage location.
-    public func getStorgeLocation() -> Promise<DJICameraStorageLocation> {
+    public func getStorageLocation() -> Promise<DJICameraStorageLocation> {
         return Promise {
             getStorageLocation(completion: $0.resolve)
         }
