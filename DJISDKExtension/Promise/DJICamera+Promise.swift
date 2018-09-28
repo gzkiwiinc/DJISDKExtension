@@ -20,6 +20,13 @@ extension DJICamera {
         }
     }
     
+    /// Sets the lens focus mode. See `DJICameraFocusMode`.
+    public func setFoucusMode(_ mode: DJICameraFocusMode) -> Promise<Void> {
+        return Promise {
+            setFocusMode(mode, withCompletion: $0.resolve)
+        }
+    }
+    
     /// Sets the camera's aspect ratio for photos. See `DJICameraPhotoAspectRatio` to view all possible ratios
     public func setPhotoAspectRatio(_ ratio: DJICameraPhotoAspectRatio) -> Promise<Void> {
         return Promise {
