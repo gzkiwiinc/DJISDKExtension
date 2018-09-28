@@ -10,6 +10,7 @@
 		8532A08821378F14008BCC84 /* DJISDKExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 8532A08621378F14008BCC84 /* DJISDKExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8532A08F2137954C008BCC84 /* DJISDKManager+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */; };
 		8576B049215DD17100B5B560 /* DJIGimbal+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8576B048215DD17100B5B560 /* DJIGimbal+Promise.swift */; };
+		8576B04B215E330B00B5B560 /* DJIFlightController+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8576B04A215E330B00B5B560 /* DJIFlightController+Promise.swift */; };
 		C0C8931F2138DC1E00986A3A /* DJIMediaManager+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */; };
 		C0C893202138DC1E00986A3A /* DJIMediaFile+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */; };
 		C0C893212138DC1E00986A3A /* DJICamera+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */; };
@@ -24,6 +25,7 @@
 		8532A08721378F14008BCC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJISDKManager+Helper.swift"; sourceTree = "<group>"; };
 		8576B048215DD17100B5B560 /* DJIGimbal+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIGimbal+Promise.swift"; sourceTree = "<group>"; };
+		8576B04A215E330B00B5B560 /* DJIFlightController+Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJIFlightController+Promise.swift"; sourceTree = "<group>"; };
 		B763E7869565DCA034F402A8 /* Pods-DJISDKExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKExtension/Pods-DJISDKExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaManager+Promise.swift"; sourceTree = "<group>"; };
 		C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaFile+Promise.swift"; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */,
 				C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */,
 				C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */,
+				8576B04A215E330B00B5B560 /* DJIFlightController+Promise.swift */,
 			);
 			path = Promise;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				8576B049215DD17100B5B560 /* DJIGimbal+Promise.swift in Sources */,
 				8532A08F2137954C008BCC84 /* DJISDKManager+Helper.swift in Sources */,
 				C0C893202138DC1E00986A3A /* DJIMediaFile+Promise.swift in Sources */,
+				8576B04B215E330B00B5B560 /* DJIFlightController+Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
