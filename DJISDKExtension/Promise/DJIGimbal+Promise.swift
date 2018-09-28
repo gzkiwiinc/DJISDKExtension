@@ -24,10 +24,8 @@ extension DJIGimbal {
     
     /// Resets the gimbal
     public func reset() -> Promise<Void> {
-        return Promise { seal in
-            self.reset { (error) in
-                seal.resolve((), error)
-            }
+        return Promise {
+            reset(completion: $0.resolve)
         }
     }
     
