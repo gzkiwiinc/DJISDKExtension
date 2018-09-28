@@ -34,6 +34,13 @@ extension DJICamera {
         }
     }
 
+    ///  Sets the camera's exposure metering. See `DJICameraMeteringMode` to view all possible exposure metering settings for the camera.
+    public func setMeteringMode(_ mode: DJICameraMeteringMode) -> Promise<Void> {
+        return Promise {
+            setMeteringMode(mode, withCompletion: $0.resolve)
+        }
+    }
+
     /// Gets the storage location.
     ///
     /// - Returns: the storage location.
