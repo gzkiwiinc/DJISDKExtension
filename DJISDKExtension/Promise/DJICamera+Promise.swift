@@ -47,6 +47,20 @@ extension DJICamera {
             setMeteringMode(mode, withCompletion: $0.resolve)
         }
     }
+    
+    /// Sets the spot metering area index. The camera image is divided into 96 spots
+    /// defined by 12 columns and 8 rows. The row index range is [0,7], where the values
+    /// increase top to bottom across the image. The column index range is [0, 11],
+    /// where the values increase left to right.
+    ///
+    /// - Parameters:
+    ///   - rowIndex: row index range is [0,7]
+    ///   - columnIndex: column index range is [0, 11]
+    public func setSpotMeteringTarget(rowIndex: UInt8, columnIndex: UInt8) -> Promise<Void> {
+        return Promise {
+            setSpotMeteringTargetRowIndex(rowIndex, columnIndex: columnIndex, withCompletion: $0.resolve)
+        }
+    }
 
     /// Gets the storage location.
     ///
