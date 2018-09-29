@@ -20,6 +20,13 @@ extension DJICamera {
         }
     }
     
+    /// Sets the camera's photo file format
+    public func setPhotoFileFormat(_ format: DJICameraPhotoFileFormat) -> Promise<Void> {
+        return Promise {
+            setPhotoFileFormat(format, withCompletion: $0.resolve)
+        }
+    }
+    
     /// Sets the lens focus mode. See `DJICameraFocusMode`.
     public func setFoucusMode(_ mode: DJICameraFocusMode) -> Promise<Void> {
         return Promise {
