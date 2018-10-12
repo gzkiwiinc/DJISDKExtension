@@ -19,11 +19,53 @@ extension DJICamera {
             setMode(mode, withCompletion: $0.resolve)
         }
     }
+    
+    /// Sets the camera's photo file format
+    public func setPhotoFileFormat(_ format: DJICameraPhotoFileFormat) -> Promise<Void> {
+        return Promise {
+            setPhotoFileFormat(format, withCompletion: $0.resolve)
+        }
+    }
+    
+    /// Sets the lens focus mode. See `DJICameraFocusMode`.
+    public func setFoucusMode(_ mode: DJICameraFocusMode) -> Promise<Void> {
+        return Promise {
+            setFocusMode(mode, withCompletion: $0.resolve)
+        }
+    }
+    
+    /// Sets the camera's aspect ratio for photos. See `DJICameraPhotoAspectRatio` to view all possible ratios
+    public func setPhotoAspectRatio(_ ratio: DJICameraPhotoAspectRatio) -> Promise<Void> {
+        return Promise {
+            setPhotoAspectRatio(ratio, withCompletion: $0.resolve)
+        }
+    }
+
+    ///  Sets the camera's exposure metering. See `DJICameraMeteringMode` to view all possible exposure metering settings for the camera.
+    public func setMeteringMode(_ mode: DJICameraMeteringMode) -> Promise<Void> {
+        return Promise {
+            setMeteringMode(mode, withCompletion: $0.resolve)
+        }
+    }
+    
+    /// Sets the spot metering area index. The camera image is divided into 96 spots
+    /// defined by 12 columns and 8 rows. The row index range is [0,7], where the values
+    /// increase top to bottom across the image. The column index range is [0, 11],
+    /// where the values increase left to right.
+    ///
+    /// - Parameters:
+    ///   - rowIndex: row index range is [0,7]
+    ///   - columnIndex: column index range is [0, 11]
+    public func setSpotMeteringTarget(rowIndex: UInt8, columnIndex: UInt8) -> Promise<Void> {
+        return Promise {
+            setSpotMeteringTargetRowIndex(rowIndex, columnIndex: columnIndex, withCompletion: $0.resolve)
+        }
+    }
 
     /// Gets the storage location.
     ///
     /// - Returns: the storage location.
-    public func getStorgeLocation() -> Promise<DJICameraStorageLocation> {
+    public func getStorageLocation() -> Promise<DJICameraStorageLocation> {
         return Promise {
             getStorageLocation(completion: $0.resolve)
         }

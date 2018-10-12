@@ -8,14 +8,14 @@
 
 Pod::Spec.new do |s|
   s.name         = "DJISDKExtension"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "Extension for DJISDK-iOS."
   s.description  = "Extension for DJISDK-iOS, only support Swift."
   s.homepage     = "https://github.com/gzkiwiinc/DJISDKExtension"
   s.license      = "MIT"
   s.authors      = { "Kyle" => "lacklock@gmail.com",
                      "Pandara" => "wen.pandara@gmail.com" }
-  s.swift_version = "4.1"
+  s.swift_version = "4.2"
   s.ios.deployment_target = "9.0"
   s.requires_arc = true
 
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
 
   s.dependency "DJI-SDK-iOS", "~> 4.7"
-  s.dependency "PromiseKit", "~> 6.0"
+  s.dependency "PromiseKit", "~> 6.4"
 
   s.pod_target_xcconfig = {'ENABLE_BITCODE' => 'NO'} # due to dji sdk
 end
