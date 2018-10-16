@@ -61,6 +61,15 @@ extension DJICamera {
             setSpotMeteringTargetRowIndex(rowIndex, columnIndex: columnIndex, withCompletion: $0.resolve)
         }
     }
+    
+    ///  Locks or unlocks the camera's AE (auto exposure).
+    ///   Post condition:
+    ///   If the AE lock is enabled, the spot metering area cannot be set.
+    public func setAELock(_ isLocked: Bool) -> Promise<Void> {
+        return Promise {
+            setAELock(isLocked, withCompletion: $0.resolve)
+        }
+    }
 
     /// Gets the storage location.
     ///
