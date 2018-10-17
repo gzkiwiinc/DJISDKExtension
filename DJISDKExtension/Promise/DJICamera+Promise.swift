@@ -71,6 +71,13 @@ extension DJICamera {
         }
     }
 
+    /// Sets the camera's exposure compensation.
+    public func setExposureCompensation(_ value: DJICameraExposureCompensation) -> Promise<Void> {
+        return Promise {
+            setExposureCompensation(value, withCompletion: $0.resolve)
+        }
+    }
+    
     /// Gets the storage location.
     ///
     /// - Returns: the storage location.
