@@ -86,4 +86,10 @@ extension DJICamera {
             getStorageLocation(completion: $0.resolve)
         }
     }
+    
+    public func startShootPhoto() -> Promise<Void> {
+        return Promise {
+            startShootPhoto(completion: $0.resolve)
+        }
+    }
 }
