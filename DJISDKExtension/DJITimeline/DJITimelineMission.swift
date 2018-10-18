@@ -18,6 +18,7 @@ public protocol DJITimelineMissionDelegate: class {
     func timelineMission(_ mission: DJITimelineMission, executedEvent: DJITimelineEvent, error: Error?)
     func timelineMission(_ mission: DJITimelineMission)
     func timelineMissionDidFinished(_ mission: DJITimelineMission)
+    func timelineMissionDidStopped(_ mission: DJITimelineMission, error: Error?)
 }
 
 public class DJITimelineMission {
@@ -29,7 +30,7 @@ public class DJITimelineMission {
     private(set) public var isPaused = false
 
     public var prepareStart: Promise<Void>?
-    
+
     public init(events: [DJITimelineEvent]) {
         self.events = events
     }
@@ -51,6 +52,11 @@ public class DJITimelineMission {
     
     public func pause() {
         isPaused = true
+    }
+    
+    public func stop() {
+        isPaused = true
+        delegate?.timelineMissionDidStopped(self, error: nil)
     }
     
     private func executeEvent() {
