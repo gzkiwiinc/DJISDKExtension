@@ -21,5 +21,4 @@ public struct DJITimelineShootPhotoEvent: DJITimelineEvent {
         return camera.startShootPhoto()
     }
     
-    
 }

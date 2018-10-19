@@ -17,6 +17,8 @@
 		858DE8FF217881AE0019C314 /* DJITimelineMissionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE8FE217881AE0019C314 /* DJITimelineMissionError.swift */; };
 		858DE901217882720019C314 /* DJITimelineGimbalRotateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE900217882720019C314 /* DJITimelineGimbalRotateEvent.swift */; };
 		858DE9032178D6340019C314 /* DJITimelineShootPhotoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE9022178D6340019C314 /* DJITimelineShootPhotoEvent.swift */; };
+		858DE905217974620019C314 /* DJITimelineDurationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE904217974620019C314 /* DJITimelineDurationEvent.swift */; };
+		858DE90721797A270019C314 /* DJITimelineBasicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */; };
 		C0C8931F2138DC1E00986A3A /* DJIMediaManager+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */; };
 		C0C893202138DC1E00986A3A /* DJIMediaFile+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */; };
 		C0C893212138DC1E00986A3A /* DJICamera+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */; };
@@ -38,6 +40,8 @@
 		858DE8FE217881AE0019C314 /* DJITimelineMissionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineMissionError.swift; sourceTree = "<group>"; };
 		858DE900217882720019C314 /* DJITimelineGimbalRotateEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineGimbalRotateEvent.swift; sourceTree = "<group>"; };
 		858DE9022178D6340019C314 /* DJITimelineShootPhotoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineShootPhotoEvent.swift; sourceTree = "<group>"; };
+		858DE904217974620019C314 /* DJITimelineDurationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineDurationEvent.swift; sourceTree = "<group>"; };
+		858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineBasicEvent.swift; sourceTree = "<group>"; };
 		B763E7869565DCA034F402A8 /* Pods-DJISDKExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKExtension/Pods-DJISDKExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaManager+Promise.swift"; sourceTree = "<group>"; };
 		C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaFile+Promise.swift"; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				858DE8FC21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift */,
 				858DE900217882720019C314 /* DJITimelineGimbalRotateEvent.swift */,
 				858DE9022178D6340019C314 /* DJITimelineShootPhotoEvent.swift */,
+				858DE904217974620019C314 /* DJITimelineDurationEvent.swift */,
+				858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */,
 			);
 			path = DJITimeline;
 			sourceTree = "<group>";
@@ -237,7 +243,9 @@
 				8532A08F2137954C008BCC84 /* DJISDKManager+Helper.swift in Sources */,
 				858DE8FD21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift in Sources */,
 				858DE9032178D6340019C314 /* DJITimelineShootPhotoEvent.swift in Sources */,
+				858DE905217974620019C314 /* DJITimelineDurationEvent.swift in Sources */,
 				858DE8FF217881AE0019C314 /* DJITimelineMissionError.swift in Sources */,
+				858DE90721797A270019C314 /* DJITimelineBasicEvent.swift in Sources */,
 				858DE901217882720019C314 /* DJITimelineGimbalRotateEvent.swift in Sources */,
 				C0C893202138DC1E00986A3A /* DJIMediaFile+Promise.swift in Sources */,
 				8576B04B215E330B00B5B560 /* DJIFlightController+Promise.swift in Sources */,

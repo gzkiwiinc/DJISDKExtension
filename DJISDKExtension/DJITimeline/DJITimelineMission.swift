@@ -16,7 +16,6 @@ public protocol DJITimelineEvent {
 public protocol DJITimelineMissionDelegate: class {
     func timelineMissionDidStart(_ mission: DJITimelineMission, error: Error?)
     func timelineMission(_ mission: DJITimelineMission, executedEvent: DJITimelineEvent, error: Error?)
-    func timelineMission(_ mission: DJITimelineMission)
     func timelineMissionDidFinished(_ mission: DJITimelineMission)
     func timelineMissionDidStopped(_ mission: DJITimelineMission, error: Error?)
 }
@@ -61,7 +60,6 @@ public class DJITimelineMission {
     
     private func executeEvent() {
         guard isPaused == false else {
-            self.delegate?.timelineMission(self)
             return
         }
         guard executeEventIndex < events.count else {
