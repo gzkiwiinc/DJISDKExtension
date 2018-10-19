@@ -28,8 +28,8 @@ open class DJITimelineMission {
     public var executeEventIndex = 0
     private(set) public var isPaused = false
 
-    public var prepareStart: Promise<Void>?
-
+    public var prepareStart: (() -> Promise<Void>)?
+    
     public init(events: [DJITimelineEvent]) {
         self.events = events
     }
@@ -39,9 +39,10 @@ open class DJITimelineMission {
             executeEventIndex = 0
         }
         isPaused = false
+        let preparePromise = prepareStart?()
         firstly {
-            prepareStart ?? Promise.value(())
-        }.done {
+            preparePromise ?? Promise.value(())
+            }.done {
             self.delegate?.timelineMissionDidStart(self, error: nil)
             self.executeEvent()
         }.catch { (error) in
