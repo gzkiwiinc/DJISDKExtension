@@ -8,6 +8,10 @@
 
 import Foundation
 
-public enum DJITimelineMissionError: Error {
+public enum DJITimelineMissionError: LocalizedError {
     case aircraftStateError(String)
+    
+    public var errorDescription: String? {
+        return "Cant't get aircraft state"
+    }
 }
