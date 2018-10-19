@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "DJISDKExtension"
-  s.version      = "0.1.1"
+  s.version      = "0.2.0"
   s.summary      = "Extension for DJISDK-iOS."
   s.description  = "Extension for DJISDK-iOS, only support Swift."
   s.homepage     = "https://github.com/gzkiwiinc/DJISDKExtension"
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source       = { :git => "https://github.com/gzkiwiinc/DJISDKExtension.git", :tag => "#{s.version}" }
-  s.source_files  = "DJISDKExtension/*.swift", "DJISDKExtension/Promise/*.swift"
+  s.source_files  = "DJISDKExtension/*.swift", "DJISDKExtension/**/*.swift"
 
 
   s.dependency "DJI-SDK-iOS", "~> 4.7"
