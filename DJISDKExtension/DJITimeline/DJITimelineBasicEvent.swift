@@ -13,7 +13,7 @@ public struct DJITimelineBasicEvent: DJITimelineEvent {
     
     public let promise: Promise<Void>
     
-    init(promise: Promise<Void>) {
+    public init(promise: Promise<Void>) {
         self.promise = promise
     }
     
