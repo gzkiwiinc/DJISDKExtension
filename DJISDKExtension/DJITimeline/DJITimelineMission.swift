@@ -20,7 +20,7 @@ public protocol DJITimelineMissionDelegate: class {
     func timelineMissionDidStopped(_ mission: DJITimelineMission, error: Error?)
 }
 
-public class DJITimelineMission {
+open class DJITimelineMission {
     
     private(set) public var events: [DJITimelineEvent]
     public weak var delegate: DJITimelineMissionDelegate?

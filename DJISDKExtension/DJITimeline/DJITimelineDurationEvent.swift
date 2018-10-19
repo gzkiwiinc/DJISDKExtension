@@ -11,7 +11,7 @@ import PromiseKit
 
 public struct DJITimelineDurationEvent: DJITimelineEvent {
     
-    public let seconds:TimeInterval
+    public let seconds: TimeInterval
     
     public init(seconds: TimeInterval) {
         self.seconds = seconds
