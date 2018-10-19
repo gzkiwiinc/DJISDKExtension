@@ -22,7 +22,7 @@ public protocol DJITimelineMissionDelegate: class {
 
 open class DJITimelineMission {
     
-    private(set) public var events: [DJITimelineEvent]
+    public var events = [DJITimelineEvent]()
     public weak var delegate: DJITimelineMissionDelegate?
     
     public var executeEventIndex = 0
@@ -33,6 +33,8 @@ open class DJITimelineMission {
     public init(events: [DJITimelineEvent]) {
         self.events = events
     }
+    
+    public init() { }
     
     public func start(resume: Bool = true) {
         if resume == false {
