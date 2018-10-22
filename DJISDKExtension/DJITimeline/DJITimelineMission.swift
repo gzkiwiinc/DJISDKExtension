@@ -16,6 +16,7 @@ public protocol DJITimelineEvent {
 public protocol DJITimelineMissionDelegate: class {
     func timelineMissionDidStart(_ mission: DJITimelineMission, error: Error?)
     func timelineMission(_ mission: DJITimelineMission, executedEvent: DJITimelineEvent, error: Error?)
+    func timelineMissionDidPaused(_ mission: DJITimelineMission)
     func timelineMissionDidFinished(_ mission: DJITimelineMission)
     func timelineMissionDidStopped(_ mission: DJITimelineMission, error: Error?)
 }
@@ -27,6 +28,7 @@ open class DJITimelineMission {
     
     public var executeEventIndex = 0
     private(set) public var isPaused = false
+    private(set) public var isStoped = false
 
     public var prepareStart: (() -> Promise<Void>)?
     
@@ -41,6 +43,7 @@ open class DJITimelineMission {
             executeEventIndex = 0
         }
         isPaused = false
+        isStoped = false
         let preparePromise = prepareStart?()
         firstly {
             preparePromise ?? Promise.value(())
@@ -57,12 +60,15 @@ open class DJITimelineMission {
     }
     
     public func stop() {
-        isPaused = true
-        delegate?.timelineMissionDidStopped(self, error: nil)
+        isStoped = true
     }
     
     private func executeEvent() {
-        guard isPaused == false else {
+        if isPaused {
+            delegate?.timelineMissionDidPaused(self)
+        }
+        if isStoped {
+            delegate?.timelineMissionDidStopped(self, error: nil)
             return
         }
         guard executeEventIndex < events.count else {
