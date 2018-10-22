@@ -66,6 +66,7 @@ open class DJITimelineMission {
     private func executeEvent() {
         if isPaused {
             delegate?.timelineMissionDidPaused(self)
+            return
         }
         if isStoped {
             delegate?.timelineMissionDidStopped(self, error: nil)
