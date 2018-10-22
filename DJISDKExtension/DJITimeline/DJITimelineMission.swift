@@ -14,7 +14,7 @@ public protocol DJITimelineEvent {
 }
 
 public protocol DJITimelineMissionDelegate: class {
-    func timelineMissionDidStart(_ mission: DJITimelineMission, error: Error?)
+    func timelineMissionDidStart(_ mission: DJITimelineMission, isResume: Bool, error: Error?)
     func timelineMission(_ mission: DJITimelineMission, executedEvent: DJITimelineEvent, error: Error?)
     func timelineMissionDidPaused(_ mission: DJITimelineMission)
     func timelineMissionDidFinished(_ mission: DJITimelineMission)
@@ -47,11 +47,11 @@ open class DJITimelineMission {
         let preparePromise = prepareStart?()
         firstly {
             preparePromise ?? Promise.value(())
-            }.done {
-            self.delegate?.timelineMissionDidStart(self, error: nil)
+        }.done {
+            self.delegate?.timelineMissionDidStart(self, isResume: resume, error: nil)
             self.executeEvent()
         }.catch { (error) in
-            self.delegate?.timelineMissionDidStart(self, error: error)
+            self.delegate?.timelineMissionDidStart(self, isResume: resume, error: error)
         }
     }
     
