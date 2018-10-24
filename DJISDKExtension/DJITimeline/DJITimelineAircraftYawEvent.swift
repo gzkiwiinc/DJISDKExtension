@@ -45,9 +45,9 @@ public struct DJITimelineAircraftYawEvent: DJITimelineEvent {
                             DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 0.1, execute: {
                                 timeoutCount += 1
                                 if timeoutCount > 15 {
-                                    sendControlData()
-                                } else {
                                     seal.reject(DJITimelineMissionError.aircraftStateError("change aircraft yaw timeout"))
+                                } else {
+                                    sendControlData()
                                 }
                             })
                         }
