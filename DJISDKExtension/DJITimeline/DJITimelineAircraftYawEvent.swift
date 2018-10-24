@@ -29,6 +29,7 @@ public struct DJITimelineAircraftYawEvent: DJITimelineEvent {
                 return Promise(error: DJITimelineMissionError.aircraftStateError("Get current yaw value failed"))
         }
         return Promise { seal in
+            var timeoutCount = 0
             func sendControlData() {
                 flightController.send(controlData) { error in
                     if let error = error {
@@ -42,7 +43,12 @@ public struct DJITimelineAircraftYawEvent: DJITimelineEvent {
                             seal.fulfill(())
                         } else {
                             DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 0.1, execute: {
-                                sendControlData()
+                                timeoutCount += 1
+                                if timeoutCount > 15 {
+                                    sendControlData()
+                                } else {
+                                    seal.reject(DJITimelineMissionError.aircraftStateError("change aircraft yaw timeout"))
+                                }
                             })
                         }
                     }
