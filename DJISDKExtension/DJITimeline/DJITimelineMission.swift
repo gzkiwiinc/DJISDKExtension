@@ -29,6 +29,7 @@ open class DJITimelineMission {
     public var executeEventIndex = 0
     private(set) public var isPaused = false
     private(set) public var isStoped = false
+    private(set) public var isFinished = false
 
     public var prepareStart: (() -> Promise<Void>)?
     
@@ -44,6 +45,7 @@ open class DJITimelineMission {
         }
         isPaused = false
         isStoped = false
+        isFinished = false
         let preparePromise = prepareStart?()
         firstly {
             preparePromise ?? Promise.value(())
@@ -74,7 +76,7 @@ open class DJITimelineMission {
         }
         guard executeEventIndex < events.count else {
             delegate?.timelineMissionDidFinished(self)
-            executeEventIndex = 0
+            isFinished = true
             return
         }
         let event = events[executeEventIndex]
@@ -85,6 +87,7 @@ open class DJITimelineMission {
             self.executeEventIndex += 1
             self.executeEvent()
         }.catch {
+            self.isStoped = true
             self.delegate?.timelineMission(self, executedEvent: event, error: $0)
         }
     }
