@@ -19,7 +19,7 @@ public struct DJIGimbalRotateEvent: DJITimelineEvent {
     }
     
     public init(pitch: Float) {
-        let rotation = DJIGimbalRotation(pitchValue: NSNumber(value: pitch), rollValue: nil, yawValue: nil, time: 0, mode: .absoluteAngle)
+        let rotation = DJIGimbalRotation(pitchValue: NSNumber(value: pitch), rollValue: nil, yawValue: nil, time: 0.5, mode: .absoluteAngle)
         self.rotation = rotation
     }
     
