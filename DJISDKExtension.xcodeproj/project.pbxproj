@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		615DE0FC5F1D8EB3C81FDB26 /* Pods_DJISDKExtensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF0FA8BCE6CD40C2E46EACA /* Pods_DJISDKExtensionTests.framework */; };
 		8532A08821378F14008BCC84 /* DJISDKExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 8532A08621378F14008BCC84 /* DJISDKExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8532A08F2137954C008BCC84 /* DJISDKManager+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */; };
 		8576B049215DD17100B5B560 /* DJIGimbal+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8576B048215DD17100B5B560 /* DJIGimbal+Promise.swift */; };
 		8576B04B215E330B00B5B560 /* DJIFlightController+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8576B04A215E330B00B5B560 /* DJIFlightController+Promise.swift */; };
+		858938A32195340A00AB7619 /* DJISDKTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858938A22195340A00AB7619 /* DJISDKTimelineTests.swift */; };
+		858938A52195340A00AB7619 /* DJISDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8532A08321378F14008BCC84 /* DJISDKExtension.framework */; };
 		858DE8F6217833BC0019C314 /* DJISDKExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 858DE8F5217833BC0019C314 /* DJISDKExtension.podspec */; };
 		858DE8F9217834560019C314 /* DJITimelineMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE8F8217834560019C314 /* DJITimelineMission.swift */; };
 		858DE8FD21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE8FC21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift */; };
@@ -25,8 +28,20 @@
 		CEDD008B2A270B813EDAF365 /* Pods_DJISDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C952EE09E10AC625517DE64 /* Pods_DJISDKExtension.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		858938A62195340A00AB7619 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8532A07A21378F14008BCC84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8532A08221378F14008BCC84;
+			remoteInfo = DJISDKExtension;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0332202BBE132057B978319C /* Pods-DJISDKExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKExtension/Pods-DJISDKExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		21E8FFD9E2714A6BE09D6FCF /* Pods-DJISDKExtensionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKExtensionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKExtensionTests/Pods-DJISDKExtensionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4AF0FA8BCE6CD40C2E46EACA /* Pods_DJISDKExtensionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DJISDKExtensionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C952EE09E10AC625517DE64 /* Pods_DJISDKExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DJISDKExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8532A08321378F14008BCC84 /* DJISDKExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DJISDKExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8532A08621378F14008BCC84 /* DJISDKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJISDKExtension.h; sourceTree = "<group>"; };
@@ -34,6 +49,9 @@
 		8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJISDKManager+Helper.swift"; sourceTree = "<group>"; };
 		8576B048215DD17100B5B560 /* DJIGimbal+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIGimbal+Promise.swift"; sourceTree = "<group>"; };
 		8576B04A215E330B00B5B560 /* DJIFlightController+Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJIFlightController+Promise.swift"; sourceTree = "<group>"; };
+		858938A02195340A00AB7619 /* DJISDKExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DJISDKExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		858938A22195340A00AB7619 /* DJISDKTimelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJISDKTimelineTests.swift; sourceTree = "<group>"; };
+		858938A42195340A00AB7619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		858DE8F5217833BC0019C314 /* DJISDKExtension.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DJISDKExtension.podspec; sourceTree = SOURCE_ROOT; };
 		858DE8F8217834560019C314 /* DJITimelineMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineMission.swift; sourceTree = "<group>"; };
 		858DE8FC21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineAircraftYawEvent.swift; sourceTree = "<group>"; };
@@ -46,6 +64,7 @@
 		C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaManager+Promise.swift"; sourceTree = "<group>"; };
 		C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaFile+Promise.swift"; sourceTree = "<group>"; };
 		C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJICamera+Promise.swift"; sourceTree = "<group>"; };
+		F5862A3BA13CABF34FD11F07 /* Pods-DJISDKExtensionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKExtensionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKExtensionTests/Pods-DJISDKExtensionTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +76,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8589389D2195340A00AB7619 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				858938A52195340A00AB7619 /* DJISDKExtension.framework in Frameworks */,
+				615DE0FC5F1D8EB3C81FDB26 /* Pods_DJISDKExtensionTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,6 +93,8 @@
 			children = (
 				0332202BBE132057B978319C /* Pods-DJISDKExtension.debug.xcconfig */,
 				B763E7869565DCA034F402A8 /* Pods-DJISDKExtension.release.xcconfig */,
+				21E8FFD9E2714A6BE09D6FCF /* Pods-DJISDKExtensionTests.debug.xcconfig */,
+				F5862A3BA13CABF34FD11F07 /* Pods-DJISDKExtensionTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -73,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				8532A08521378F14008BCC84 /* DJISDKExtension */,
+				858938A12195340A00AB7619 /* DJISDKExtensionTests */,
 				8532A08421378F14008BCC84 /* Products */,
 				45258C32141CD8F01C57A5D2 /* Pods */,
 				9C938608617A8B6D8EF1CEC7 /* Frameworks */,
@@ -83,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				8532A08321378F14008BCC84 /* DJISDKExtension.framework */,
+				858938A02195340A00AB7619 /* DJISDKExtensionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +130,15 @@
 				8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */,
 			);
 			path = DJISDKExtension;
+			sourceTree = "<group>";
+		};
+		858938A12195340A00AB7619 /* DJISDKExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				858938A22195340A00AB7619 /* DJISDKTimelineTests.swift */,
+				858938A42195340A00AB7619 /* Info.plist */,
+			);
+			path = DJISDKExtensionTests;
 			sourceTree = "<group>";
 		};
 		858DE8F7217833E00019C314 /* DJITimeline */ = {
@@ -118,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				5C952EE09E10AC625517DE64 /* Pods_DJISDKExtension.framework */,
+				4AF0FA8BCE6CD40C2E46EACA /* Pods_DJISDKExtensionTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,18 +209,42 @@
 			productReference = 8532A08321378F14008BCC84 /* DJISDKExtension.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		8589389F2195340A00AB7619 /* DJISDKExtensionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 858938AA2195340A00AB7619 /* Build configuration list for PBXNativeTarget "DJISDKExtensionTests" */;
+			buildPhases = (
+				DB5EBD8ACD8E4E350C6CD909 /* [CP] Check Pods Manifest.lock */,
+				8589389C2195340A00AB7619 /* Sources */,
+				8589389D2195340A00AB7619 /* Frameworks */,
+				8589389E2195340A00AB7619 /* Resources */,
+				C9388459A5B27C0E7FE13347 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				858938A72195340A00AB7619 /* PBXTargetDependency */,
+			);
+			name = DJISDKExtensionTests;
+			productName = DJISDKExtensionTests;
+			productReference = 858938A02195340A00AB7619 /* DJISDKExtensionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		8532A07A21378F14008BCC84 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = kiwi;
 				TargetAttributes = {
 					8532A08221378F14008BCC84 = {
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 0940;
+					};
+					8589389F2195340A00AB7619 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
@@ -195,6 +261,7 @@
 			projectRoot = "";
 			targets = (
 				8532A08221378F14008BCC84 /* DJISDKExtension */,
+				8589389F2195340A00AB7619 /* DJISDKExtensionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +272,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				858DE8F6217833BC0019C314 /* DJISDKExtension.podspec in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8589389E2195340A00AB7619 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +297,52 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DJISDKExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9388459A5B27C0E7FE13347 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DJISDKExtensionTests/Pods-DJISDKExtensionTests-frameworks.sh",
+				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DJISDKExtensionTests/Pods-DJISDKExtensionTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB5EBD8ACD8E4E350C6CD909 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DJISDKExtensionTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -252,7 +372,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8589389C2195340A00AB7619 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				858938A32195340A00AB7619 /* DJISDKTimelineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		858938A72195340A00AB7619 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8532A08221378F14008BCC84 /* DJISDKExtension */;
+			targetProxy = 858938A62195340A00AB7619 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8532A08921378F14008BCC84 /* Debug */ = {
@@ -434,6 +570,49 @@
 			};
 			name = Release;
 		};
+		858938A82195340A00AB7619 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21E8FFD9E2714A6BE09D6FCF /* Pods-DJISDKExtensionTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M333L7769B;
+				INFOPLIST_FILE = DJISDKExtensionTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = KW.DJISDKExtensionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		858938A92195340A00AB7619 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5862A3BA13CABF34FD11F07 /* Pods-DJISDKExtensionTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M333L7769B;
+				INFOPLIST_FILE = DJISDKExtensionTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = KW.DJISDKExtensionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -451,6 +630,15 @@
 			buildConfigurations = (
 				8532A08C21378F14008BCC84 /* Debug */,
 				8532A08D21378F14008BCC84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		858938AA2195340A00AB7619 /* Build configuration list for PBXNativeTarget "DJISDKExtensionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				858938A82195340A00AB7619 /* Debug */,
+				858938A92195340A00AB7619 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

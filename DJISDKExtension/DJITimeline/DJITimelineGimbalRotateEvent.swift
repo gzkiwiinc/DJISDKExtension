@@ -10,7 +10,7 @@ import Foundation
 import DJISDK
 import PromiseKit
 
-public struct DJIGimbalRotateEvent: DJITimelineEvent {
+public struct DJIGimbalRotateEvent: DJITimelineEvent, CustomDebugStringConvertible {
     
     private(set) public var rotation: DJIGimbalRotation
     
@@ -30,4 +30,7 @@ public struct DJIGimbalRotateEvent: DJITimelineEvent {
         return gimbal.rotate(rotation: rotation)
     }
     
+    public var debugDescription: String {
+        return "DJIGimbalRotateEvent: pitch: \(rotation.pitch?.doubleValue ?? 0)"
+    }
 }

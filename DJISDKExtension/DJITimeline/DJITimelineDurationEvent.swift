@@ -9,7 +9,7 @@
 import Foundation
 import PromiseKit
 
-public struct DJITimelineDurationEvent: DJITimelineEvent {
+public struct DJITimelineDurationEvent: DJITimelineEvent, CustomDebugStringConvertible {
     
     public let seconds: TimeInterval
     
@@ -21,4 +21,7 @@ public struct DJITimelineDurationEvent: DJITimelineEvent {
         return Promise(after(seconds: seconds))
     }
     
+    public var debugDescription: String {
+        return "DJITimelineDurationEvent: delay \(seconds)"
+    }
 }
