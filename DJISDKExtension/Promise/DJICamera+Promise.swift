@@ -92,4 +92,10 @@ extension DJICamera {
             startShootPhoto(completion: $0.resolve)
         }
     }
+    
+    public func setAutoLockGimbalEnabled(_ enabled: Bool) -> Promise<Void> {
+        return Promise {
+            setAutoLockGimbalEnabled(enabled, withCompletion: $0.resolve)
+        }
+    }
 }
