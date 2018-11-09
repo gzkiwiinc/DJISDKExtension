@@ -11,14 +11,14 @@ import PromiseKit
 
 public struct DJITimelineBasicEvent: DJITimelineEvent {
     
-    public let promise: Promise<Void>
+    public let promiseWrapper: () -> Promise<Void>
     
-    public init(promise: Promise<Void>) {
-        self.promise = promise
+    public init(wrapper: @escaping () -> Promise<Void>) {
+        self.promiseWrapper = wrapper
     }
     
     public func start() -> Promise<Void> {
-        return promise
+        return promiseWrapper()
     }
     
 }

@@ -19,6 +19,11 @@ class DJISDKTimelineTests: XCTestCase, DJITimelineMissionDelegate {
         events.append(DJITimelineDurationEvent(seconds: 1))
         events.append(CustomeTimelineEvent())
         events.append(DJITimelineDurationEvent(seconds: 1))
+        let basicEvent = DJITimelineBasicEvent { Promise(resolver: { (seal) in
+            print("DJITimelineBasicEvent")
+            seal.fulfill(())
+        }) }
+        events.append(basicEvent)
         let timeline = DJITimelineMission(events: events)
         timeline.delegate = self
         timeline.prepareStart = {
