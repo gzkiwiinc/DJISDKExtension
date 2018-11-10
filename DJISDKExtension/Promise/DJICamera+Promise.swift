@@ -78,6 +78,49 @@ extension DJICamera {
         }
     }
     
+    public func setExposureMode(_ mode: DJICameraExposureMode) -> Promise<Void> {
+        return Promise {
+            setExposureMode(mode, withCompletion: $0.resolve)
+        }
+    }
+    
+    public func getISO() -> Promise<DJICameraISO> {
+        return Promise {
+            getISOWithCompletion($0.resolve)
+        }
+    }
+    
+    
+    public func setISO(_ iso: DJICameraISO) -> Promise<Void> {
+        return Promise {
+            setISO(iso, withCompletion: $0.resolve)
+        }
+    }
+    
+    public func getAperture() -> Promise<DJICameraAperture> {
+        return Promise {
+            getApertureWithCompletion($0.resolve)
+        }
+    }
+    
+    public func setAperture(_ aperture: DJICameraAperture) -> Promise<Void> {
+        return Promise {
+            setAperture(aperture, withCompletion: $0.resolve)
+        }
+    }
+    
+    public func getShutterSpeed() -> Promise<DJICameraShutterSpeed> {
+        return Promise {
+            getShutterSpeed(completion: $0.resolve)
+        }
+    }
+    
+    public func setShutterSpeed(_ shutterSpeed: DJICameraShutterSpeed) -> Promise<Void> {
+        return Promise {
+            setShutterSpeed(shutterSpeed, withCompletion: $0.resolve)
+        }
+    }
+    
     /// Gets the storage location.
     ///
     /// - Returns: the storage location.
