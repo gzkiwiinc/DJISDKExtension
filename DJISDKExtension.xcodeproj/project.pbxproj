@@ -14,6 +14,8 @@
 		8576B04B215E330B00B5B560 /* DJIFlightController+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8576B04A215E330B00B5B560 /* DJIFlightController+Promise.swift */; };
 		858938A32195340A00AB7619 /* DJISDKTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858938A22195340A00AB7619 /* DJISDKTimelineTests.swift */; };
 		858938A52195340A00AB7619 /* DJISDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8532A08321378F14008BCC84 /* DJISDKExtension.framework */; };
+		858938AF2196D16800AB7619 /* Camera+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858938AE2196D16800AB7619 /* Camera+Extension.swift */; };
+		858938B12196D6A200AB7619 /* DJISDKExtensionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858938B02196D6A200AB7619 /* DJISDKExtensionError.swift */; };
 		858DE8F6217833BC0019C314 /* DJISDKExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 858DE8F5217833BC0019C314 /* DJISDKExtension.podspec */; };
 		858DE8F9217834560019C314 /* DJITimelineMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE8F8217834560019C314 /* DJITimelineMission.swift */; };
 		858DE8FD21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE8FC21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift */; };
@@ -52,6 +54,8 @@
 		858938A02195340A00AB7619 /* DJISDKExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DJISDKExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		858938A22195340A00AB7619 /* DJISDKTimelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJISDKTimelineTests.swift; sourceTree = "<group>"; };
 		858938A42195340A00AB7619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		858938AE2196D16800AB7619 /* Camera+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Camera+Extension.swift"; sourceTree = "<group>"; };
+		858938B02196D6A200AB7619 /* DJISDKExtensionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJISDKExtensionError.swift; sourceTree = "<group>"; };
 		858DE8F5217833BC0019C314 /* DJISDKExtension.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DJISDKExtension.podspec; sourceTree = SOURCE_ROOT; };
 		858DE8F8217834560019C314 /* DJITimelineMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineMission.swift; sourceTree = "<group>"; };
 		858DE8FC21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineAircraftYawEvent.swift; sourceTree = "<group>"; };
@@ -122,12 +126,14 @@
 		8532A08521378F14008BCC84 /* DJISDKExtension */ = {
 			isa = PBXGroup;
 			children = (
+				858938AD2196D13E00AB7619 /* Extensions */,
 				858DE8F7217833E00019C314 /* DJITimeline */,
 				858DE8F5217833BC0019C314 /* DJISDKExtension.podspec */,
 				C0C8932D2139276300986A3A /* Promise */,
 				8532A08621378F14008BCC84 /* DJISDKExtension.h */,
 				8532A08721378F14008BCC84 /* Info.plist */,
 				8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */,
+				858938B02196D6A200AB7619 /* DJISDKExtensionError.swift */,
 			);
 			path = DJISDKExtension;
 			sourceTree = "<group>";
@@ -139,6 +145,14 @@
 				858938A42195340A00AB7619 /* Info.plist */,
 			);
 			path = DJISDKExtensionTests;
+			sourceTree = "<group>";
+		};
+		858938AD2196D13E00AB7619 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				858938AE2196D16800AB7619 /* Camera+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		858DE8F7217833E00019C314 /* DJITimeline */ = {
@@ -364,6 +378,8 @@
 				858DE8FD21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift in Sources */,
 				858DE9032178D6340019C314 /* DJITimelineShootPhotoEvent.swift in Sources */,
 				858DE905217974620019C314 /* DJITimelineDurationEvent.swift in Sources */,
+				858938AF2196D16800AB7619 /* Camera+Extension.swift in Sources */,
+				858938B12196D6A200AB7619 /* DJISDKExtensionError.swift in Sources */,
 				858DE8FF217881AE0019C314 /* DJITimelineMissionError.swift in Sources */,
 				858DE90721797A270019C314 /* DJITimelineBasicEvent.swift in Sources */,
 				858DE901217882720019C314 /* DJITimelineGimbalRotateEvent.swift in Sources */,

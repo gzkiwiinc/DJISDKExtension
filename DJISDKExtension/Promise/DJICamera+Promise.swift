@@ -97,6 +97,24 @@ extension DJICamera {
         }
     }
     
+    public func setISO(value: UInt) -> Promise<Void> {
+        guard let iso = DJICameraISO(isoValue: value) else {
+            return Promise(error: DJISDKExtensionError.isoValueNotMatchStop)
+        }
+        return Promise { seal in
+            setISO(iso, withCompletion: { (error) in
+                if let nsError = error as NSError?,
+                    nsError.code == -1005 {
+                    seal.fulfill(()) // in some case, even setting is succees, will throw error
+                } else if let error = error {
+                    seal.reject(error)
+                } else {
+                    seal.fulfill(())
+                }
+            })
+        }
+    }
+    
     public func getAperture() -> Promise<DJICameraAperture> {
         return Promise {
             getApertureWithCompletion($0.resolve)
@@ -141,4 +159,30 @@ extension DJICamera {
             setAutoLockGimbalEnabled(enabled, withCompletion: $0.resolve)
         }
     }
+    
+    // MARK: Custom
+    
+    /// get current expoureSetting, using it to lock exposure
+    public func setAELockContinuous() -> Promise<Void> {
+        guard delegate != nil else {
+            assertionFailure("should set camera delegate to get expoureSetting")
+            return Promise(error: PMKError.badInput)
+        }
+        guard let exposureSettings = self.exposureSettings else {
+            return Promise(error: PMKError.cancelled)
+        }
+        return firstly {
+            self.setExposureCompensation(.N00)
+        }.then {
+            after(seconds: 0.1)
+        }.then {
+            self.setExposureMode(.manual)
+        }.then {
+            when(fulfilled: self.setISO(value: exposureSettings.ISO),
+                            self.isAdjustableApertureSupported() ? self.setAperture(exposureSettings.aperture) : Promise.value(()),
+                            self.setShutterSpeed(exposureSettings.shutterSpeed))
+        }.asVoid()
+    }
+
 }
+
