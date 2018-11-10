@@ -168,17 +168,17 @@ extension DJICamera {
             assertionFailure("should set camera delegate to get expoureSetting")
             return Promise(error: PMKError.badInput)
         }
-        guard let exposureSettings = self.exposureSettings else {
-            return Promise(error: PMKError.cancelled)
-        }
-        return firstly {
+        return firstly { 
             self.setExposureCompensation(.N00)
         }.then {
             after(seconds: 0.1)
         }.then {
             self.setExposureMode(.manual)
-        }.then {
-            when(fulfilled: self.setISO(value: exposureSettings.ISO),
+        }.then { () -> Promise<Void> in
+            guard let exposureSettings = self.exposureSettings else {
+                return Promise(error: PMKError.cancelled)
+            }
+            return when(fulfilled: self.setISO(value: exposureSettings.ISO),
                             self.isAdjustableApertureSupported() ? self.setAperture(exposureSettings.aperture) : Promise.value(()),
                             self.setShutterSpeed(exposureSettings.shutterSpeed))
         }.asVoid()
