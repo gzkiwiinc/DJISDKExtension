@@ -22,6 +22,12 @@ extension DJIGimbal {
         }
     }
     
+    public func rotate(rotation: DJIGimbalRotation) -> Promise<Void> {
+        return Promise { seal in
+            rotate(with: rotation, completion: seal.resolve)
+        }
+    }
+    
     /// Resets the gimbal
     public func reset() -> Promise<Void> {
         return Promise {
