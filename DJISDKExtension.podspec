@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.source_files  = "DJISDKExtension/*.swift", "DJISDKExtension/**/*.swift"
 
 
-  s.dependency "DJI-SDK-iOS", "~> 4.7"
+  s.dependency "DJI-SDK-iOS", "~> 4.6"
   s.dependency "PromiseKit", "~> 6.4"
 
   s.pod_target_xcconfig = {'ENABLE_BITCODE' => 'NO'} # due to dji sdk
