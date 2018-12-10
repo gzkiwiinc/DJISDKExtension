@@ -9,21 +9,6 @@
 import DJISDK
 import PromiseKit
 
-extension DJICamera {
-    private struct AssociatedKeys {
-        static var exposureSettingKey = "exposureSettingKey"
-    }
-    
-    public var exposureSettings: DJICameraExposureSettings? {
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.exposureSettingKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.exposureSettingKey) as? DJICameraExposureSettings
-        }
-    }
-}
-
 extension DJICameraISO {
     public init?(isoValue: UInt) {
         switch isoValue {

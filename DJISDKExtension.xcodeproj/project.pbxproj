@@ -10,6 +10,7 @@
 		615DE0FC5F1D8EB3C81FDB26 /* Pods_DJISDKExtensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF0FA8BCE6CD40C2E46EACA /* Pods_DJISDKExtensionTests.framework */; };
 		8532A08821378F14008BCC84 /* DJISDKExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 8532A08621378F14008BCC84 /* DJISDKExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8532A08F2137954C008BCC84 /* DJISDKManager+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */; };
+		857324C921BE4D8300E11CA8 /* DJICameraKeyedValue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857324C821BE4D8300E11CA8 /* DJICameraKeyedValue+Extension.swift */; };
 		8576B049215DD17100B5B560 /* DJIGimbal+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8576B048215DD17100B5B560 /* DJIGimbal+Promise.swift */; };
 		8576B04B215E330B00B5B560 /* DJIFlightController+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8576B04A215E330B00B5B560 /* DJIFlightController+Promise.swift */; };
 		858938A32195340A00AB7619 /* DJISDKTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858938A22195340A00AB7619 /* DJISDKTimelineTests.swift */; };
@@ -49,6 +50,7 @@
 		8532A08621378F14008BCC84 /* DJISDKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJISDKExtension.h; sourceTree = "<group>"; };
 		8532A08721378F14008BCC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJISDKManager+Helper.swift"; sourceTree = "<group>"; };
+		857324C821BE4D8300E11CA8 /* DJICameraKeyedValue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJICameraKeyedValue+Extension.swift"; sourceTree = "<group>"; };
 		8576B048215DD17100B5B560 /* DJIGimbal+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIGimbal+Promise.swift"; sourceTree = "<group>"; };
 		8576B04A215E330B00B5B560 /* DJIFlightController+Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJIFlightController+Promise.swift"; sourceTree = "<group>"; };
 		858938A02195340A00AB7619 /* DJISDKExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DJISDKExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 		8532A08521378F14008BCC84 /* DJISDKExtension */ = {
 			isa = PBXGroup;
 			children = (
+				85BEDF36219C23BF002695F8 /* KeyManager */,
 				858938AD2196D13E00AB7619 /* Extensions */,
 				858DE8F7217833E00019C314 /* DJITimeline */,
 				858DE8F5217833BC0019C314 /* DJISDKExtension.podspec */,
@@ -167,6 +170,14 @@
 				858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */,
 			);
 			path = DJITimeline;
+			sourceTree = "<group>";
+		};
+		85BEDF36219C23BF002695F8 /* KeyManager */ = {
+			isa = PBXGroup;
+			children = (
+				857324C821BE4D8300E11CA8 /* DJICameraKeyedValue+Extension.swift */,
+			);
+			path = KeyManager;
 			sourceTree = "<group>";
 		};
 		9C938608617A8B6D8EF1CEC7 /* Frameworks */ = {
@@ -378,6 +389,7 @@
 				858DE8FD21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift in Sources */,
 				858DE9032178D6340019C314 /* DJITimelineShootPhotoEvent.swift in Sources */,
 				858DE905217974620019C314 /* DJITimelineDurationEvent.swift in Sources */,
+				857324C921BE4D8300E11CA8 /* DJICameraKeyedValue+Extension.swift in Sources */,
 				858938AF2196D16800AB7619 /* Camera+Extension.swift in Sources */,
 				858938B12196D6A200AB7619 /* DJISDKExtensionError.swift in Sources */,
 				858DE8FF217881AE0019C314 /* DJITimelineMissionError.swift in Sources */,
