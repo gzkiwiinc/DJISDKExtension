@@ -164,10 +164,6 @@ extension DJICamera {
     
     /// get current expoureSetting, using it to lock exposure
     public func setAELockContinuous() -> Promise<Void> {
-        guard delegate != nil else {
-            assertionFailure("should set camera delegate to get expoureSetting")
-            return Promise(error: PMKError.badInput)
-        }
         return firstly { 
             self.setExposureCompensation(.N00)
         }.then {
