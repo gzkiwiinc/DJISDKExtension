@@ -17,7 +17,12 @@ extension DJICamera {
             , let exposureValue = DJISDKManager.keyManager()?.getValueFor(key)?.value as? NSValue else {
                 return nil
         }
-        var exposureSettings = DJICameraExposureSettings(aperture: DJICameraAperture.unknown, shutterSpeed: DJICameraShutterSpeed.speedUnknown, ISO: DJICameraISO.isoUnknown.rawValue, exposureCompensation: DJICameraExposureCompensation.unknown, EI: 0)
+        var exposureSettings = DJICameraExposureSettings(aperture: DJICameraAperture.unknown,
+                                                         shutterSpeed: DJICameraShutterSpeed.speedUnknown,
+                                                         ISO: DJICameraISO.isoUnknown.rawValue,
+                                                         exposureCompensation: DJICameraExposureCompensation.unknown,
+                                                         EI: 0,
+                                                         exposureState: DJICameraExposureState.unknown)
         exposureValue.getValue(&exposureSettings)
         if exposureSettings.aperture == DJICameraAperture.unknown {
             return nil
