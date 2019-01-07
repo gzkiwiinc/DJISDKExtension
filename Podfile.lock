@@ -1,17 +1,17 @@
 PODS:
-  - DJI-SDK-iOS (4.7)
-  - PromiseKit (6.4.0):
-    - PromiseKit/CorePromise (= 6.4.0)
-    - PromiseKit/Foundation (= 6.4.0)
-    - PromiseKit/UIKit (= 6.4.0)
-  - PromiseKit/CorePromise (6.4.0)
-  - PromiseKit/Foundation (6.4.0):
+  - DJI-SDK-iOS (4.8.1)
+  - PromiseKit (6.7.0):
+    - PromiseKit/CorePromise (= 6.7.0)
+    - PromiseKit/Foundation (= 6.7.0)
+    - PromiseKit/UIKit (= 6.7.0)
+  - PromiseKit/CorePromise (6.7.0)
+  - PromiseKit/Foundation (6.7.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.4.0):
+  - PromiseKit/UIKit (6.7.0):
     - PromiseKit/CorePromise
 
 DEPENDENCIES:
-  - DJI-SDK-iOS (~> 4.7)
+  - DJI-SDK-iOS (~> 4.8.1)
   - PromiseKit (~> 6.4)
 
 SPEC REPOS:
@@ -20,9 +20,9 @@ SPEC REPOS:
     - PromiseKit
 
 SPEC CHECKSUMS:
-  DJI-SDK-iOS: 9e176a00683625f3b2f7808aaab337c7c21a9509
-  PromiseKit: ae3616f45d7bb9bf4ff1e91abc9b7a8c48a340e0
+  DJI-SDK-iOS: 513ed6e823465e15af74a77b228506ab5138691b
+  PromiseKit: 453ddcc947fe7b302f3ef41882b81d31c554df7f
 
-PODFILE CHECKSUM: cf5e4c6ce83bf15aa959cc9078e7d0808dda0326
+PODFILE CHECKSUM: a6d83725da8c03db64493f64fa89a1fe0697ef87
 
 COCOAPODS: 1.5.3
