@@ -25,6 +25,8 @@
 		858DE9032178D6340019C314 /* DJITimelineShootPhotoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE9022178D6340019C314 /* DJITimelineShootPhotoEvent.swift */; };
 		858DE905217974620019C314 /* DJITimelineDurationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE904217974620019C314 /* DJITimelineDurationEvent.swift */; };
 		858DE90721797A270019C314 /* DJITimelineBasicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */; };
+		85BCB2D021E32DA60023F1A7 /* DJIExtraWaypointMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCB2CF21E32DA60023F1A7 /* DJIExtraWaypointMission.swift */; };
+		85BCB2D221E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCB2D121E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift */; };
 		C0C8931F2138DC1E00986A3A /* DJIMediaManager+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */; };
 		C0C893202138DC1E00986A3A /* DJIMediaFile+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */; };
 		C0C893212138DC1E00986A3A /* DJICamera+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */; };
@@ -66,6 +68,8 @@
 		858DE9022178D6340019C314 /* DJITimelineShootPhotoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineShootPhotoEvent.swift; sourceTree = "<group>"; };
 		858DE904217974620019C314 /* DJITimelineDurationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineDurationEvent.swift; sourceTree = "<group>"; };
 		858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineBasicEvent.swift; sourceTree = "<group>"; };
+		85BCB2CF21E32DA60023F1A7 /* DJIExtraWaypointMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIExtraWaypointMission.swift; sourceTree = "<group>"; };
+		85BCB2D121E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIExtraWaypointMissionTests.swift; sourceTree = "<group>"; };
 		B763E7869565DCA034F402A8 /* Pods-DJISDKExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKExtension/Pods-DJISDKExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaManager+Promise.swift"; sourceTree = "<group>"; };
 		C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaFile+Promise.swift"; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				8532A08721378F14008BCC84 /* Info.plist */,
 				8532A08E2137954C008BCC84 /* DJISDKManager+Helper.swift */,
 				858938B02196D6A200AB7619 /* DJISDKExtensionError.swift */,
+				85BCB2CF21E32DA60023F1A7 /* DJIExtraWaypointMission.swift */,
 			);
 			path = DJISDKExtension;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			children = (
 				858938A22195340A00AB7619 /* DJISDKTimelineTests.swift */,
 				858938A42195340A00AB7619 /* Info.plist */,
+				85BCB2D121E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift */,
 			);
 			path = DJISDKExtensionTests;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 				C0C893212138DC1E00986A3A /* DJICamera+Promise.swift in Sources */,
 				C0C8931F2138DC1E00986A3A /* DJIMediaManager+Promise.swift in Sources */,
 				8576B049215DD17100B5B560 /* DJIGimbal+Promise.swift in Sources */,
+				85BCB2D021E32DA60023F1A7 /* DJIExtraWaypointMission.swift in Sources */,
 				858DE8F9217834560019C314 /* DJITimelineMission.swift in Sources */,
 				8532A08F2137954C008BCC84 /* DJISDKManager+Helper.swift in Sources */,
 				858DE8FD21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift in Sources */,
@@ -404,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BCB2D221E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift in Sources */,
 				858938A32195340A00AB7619 /* DJISDKTimelineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
