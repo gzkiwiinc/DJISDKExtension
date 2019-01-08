@@ -29,12 +29,13 @@
 		85BCB2D021E32DA60023F1A7 /* DJIExtraWaypointMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCB2CF21E32DA60023F1A7 /* DJIExtraWaypointMission.swift */; };
 		85BCB2D221E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCB2D121E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift */; };
 		85D118C821E4862400766BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118C721E4862400766BE5 /* AppDelegate.swift */; };
-		85D118CA21E4862400766BE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118C921E4862400766BE5 /* ViewController.swift */; };
 		85D118CD21E4862400766BE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85D118CB21E4862400766BE5 /* Main.storyboard */; };
 		85D118CF21E4862500766BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85D118CE21E4862500766BE5 /* Assets.xcassets */; };
 		85D118D221E4862500766BE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85D118D021E4862500766BE5 /* LaunchScreen.storyboard */; };
 		85D118D821E4865B00766BE5 /* DJISDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8532A08321378F14008BCC84 /* DJISDKExtension.framework */; };
 		85D118D921E4865B00766BE5 /* DJISDKExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8532A08321378F14008BCC84 /* DJISDKExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		85D118DF21E48A5300766BE5 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118DE21E48A5300766BE5 /* RootTableViewController.swift */; };
+		85D118E121E49A9F00766BE5 /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118E021E49A9F00766BE5 /* ProductInfoViewController.swift */; };
 		C0C8931F2138DC1E00986A3A /* DJIMediaManager+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */; };
 		C0C893202138DC1E00986A3A /* DJIMediaFile+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */; };
 		C0C893212138DC1E00986A3A /* DJICamera+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */; };
@@ -103,11 +104,12 @@
 		85BCB2D121E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIExtraWaypointMissionTests.swift; sourceTree = "<group>"; };
 		85D118C521E4862400766BE5 /* DJIExtensionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJIExtensionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D118C721E4862400766BE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		85D118C921E4862400766BE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		85D118CC21E4862400766BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		85D118CE21E4862500766BE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85D118D121E4862500766BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85D118D321E4862500766BE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85D118DE21E48A5300766BE5 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
+		85D118E021E49A9F00766BE5 /* ProductInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
 		9CBCCC308A30FD9AF5FA77BD /* Pods-DJIExtensionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJIExtensionDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJIExtensionDemo/Pods-DJIExtensionDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B763E7869565DCA034F402A8 /* Pods-DJISDKExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKExtension/Pods-DJISDKExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaManager+Promise.swift"; sourceTree = "<group>"; };
@@ -241,14 +243,23 @@
 		85D118C621E4862400766BE5 /* DJIExtensionDemo */ = {
 			isa = PBXGroup;
 			children = (
-				85D118C721E4862400766BE5 /* AppDelegate.swift */,
-				85D118C921E4862400766BE5 /* ViewController.swift */,
+				85D118DD21E488F300766BE5 /* Config */,
 				85D118CB21E4862400766BE5 /* Main.storyboard */,
-				85D118CE21E4862500766BE5 /* Assets.xcassets */,
-				85D118D021E4862500766BE5 /* LaunchScreen.storyboard */,
-				85D118D321E4862500766BE5 /* Info.plist */,
+				85D118DE21E48A5300766BE5 /* RootTableViewController.swift */,
+				85D118E021E49A9F00766BE5 /* ProductInfoViewController.swift */,
 			);
 			path = DJIExtensionDemo;
+			sourceTree = "<group>";
+		};
+		85D118DD21E488F300766BE5 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				85D118D021E4862500766BE5 /* LaunchScreen.storyboard */,
+				85D118D321E4862500766BE5 /* Info.plist */,
+				85D118C721E4862400766BE5 /* AppDelegate.swift */,
+				85D118CE21E4862500766BE5 /* Assets.xcassets */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 		9C938608617A8B6D8EF1CEC7 /* Frameworks */ = {
@@ -469,6 +480,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-DJIExtensionDemo/Pods-DJIExtensionDemo-frameworks.sh",
 				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -476,6 +488,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -568,8 +581,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85D118CA21E4862400766BE5 /* ViewController.swift in Sources */,
+				85D118E121E49A9F00766BE5 /* ProductInfoViewController.swift in Sources */,
 				85D118C821E4862400766BE5 /* AppDelegate.swift in Sources */,
+				85D118DF21E48A5300766BE5 /* RootTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,7 +860,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = KW.DJIExtensionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = KW.DJILibDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -868,7 +882,7 @@
 					"@executable_path/Frameworks",
 				);
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = KW.DJIExtensionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = KW.DJILibDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
