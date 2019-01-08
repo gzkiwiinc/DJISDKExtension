@@ -215,21 +215,33 @@
                                         <rect key="frame" x="0.0" y="0.0" width="38" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="start"/>
+                                        <connections>
+                                            <action selector="start:" destination="p99-KF-Phu" eventType="touchUpInside" id="eWj-OQ-BTm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLX-xh-tRL">
                                         <rect key="frame" x="48" y="0.0" width="49" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="pause"/>
+                                        <connections>
+                                            <action selector="pause:" destination="p99-KF-Phu" eventType="touchUpInside" id="Zxo-rY-2Gk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtG-DA-RpE">
                                         <rect key="frame" x="107" y="0.0" width="61" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="resume"/>
+                                        <connections>
+                                            <action selector="resume:" destination="p99-KF-Phu" eventType="touchUpInside" id="S5i-dK-Jlh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7S-Y1-k68">
                                         <rect key="frame" x="178" y="0.0" width="36" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="stop"/>
+                                        <connections>
+                                            <action selector="stop:" destination="p99-KF-Phu" eventType="touchUpInside" id="Yfq-N1-7mt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
