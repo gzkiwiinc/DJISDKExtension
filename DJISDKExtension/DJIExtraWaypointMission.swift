@@ -11,9 +11,12 @@ import PromiseKit
 
 public protocol DJIExtraWaypointMissionDelegate: class {
     func waypointMissionPrepareStart(_ mission: DJIWaypointMission)
-    func waypointMissionExecuting(_ mission: DJIWaypointMission, executionEvent: DJIWaypointMissionExecutionEvent)
+    /// mission start executing or resume exectuting
+    func waypointMissionStartExecuting(_ mission: DJIWaypointMission, missionIndex: Int)
     func waypointMissionDidStop(_ mission: DJIWaypointMission, error: Error?)
+    func waypointMissionDidPaused(_ mission: DJIWaypointMission)
     func waypointMissionDidFinished()
+    func waypointMissionExecuting(_ mission: DJIWaypointMission, executionEvent: DJIWaypointMissionExecutionEvent)
 }
 
 public enum DJIExtraWaypointMissionError: Error {
@@ -34,8 +37,8 @@ public class DJIExtraWaypointMission: DJIMission {
     public var currentMission: DJIWaypointMission {
         return waypointMissions[currentMissionIndex]
     }
-    public var currentWaypointIndex: Int {
-        var totalIndex = 0
+    public var targetWaypointIndex: Int {
+        var totalIndex = -1
         for i in 0 ..< currentMissionIndex {
             totalIndex += Int(waypointMissions[i].waypointCount)
         }
@@ -72,22 +75,30 @@ public class DJIExtraWaypointMission: DJIMission {
         }
         currentWaypointIndexInMission = 0
         currentMissionIndex = 0
+        DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
         missionOperator.addListener(toExecutionEvent: self, with: listenerQueue) { [weak self] (executionEvent) in
             guard let self = self else { return }
             self.delegate?.waypointMissionExecuting(self.currentMission, executionEvent: executionEvent)
             if let progress = executionEvent.progress {
                 self.currentWaypointIndexInMission = progress.targetWaypointIndex
             }
+            if executionEvent.currentState == .executionPaused {
+                self.delegate?.waypointMissionDidPaused(self.currentMission)
+            } else if executionEvent.currentState == .executing {
+                self.delegate?.waypointMissionStartExecuting(self.currentMission, missionIndex: self.currentMissionIndex)
+            }
         }
         missionOperator.addListener(toFinished: self, with: listenerQueue) { [weak self] (error) in
             guard let self = self else { return }
             if let error = error {
                 self.delegate?.waypointMissionDidStop(self.currentMission, error: error)
-            } else if self.currentWaypointIndex == self.currentMission.waypointCount - 1 { // is stop at last waypoint
+                DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
+            } else if self.targetWaypointIndex == self.currentMission.waypointCount - 1 { // is stop at last waypoint
                 self.missionFinished()
             } else {
                 // user trigger goHome, waypoint mission stopped
                 self.delegate?.waypointMissionDidStop(self.currentMission, error: nil)
+                DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
             }
         }
         return startExecute(mission: waypointMissions[0])
@@ -112,6 +123,33 @@ public class DJIExtraWaypointMission: DJIMission {
         }
     }
     
+    public func pauseMission() -> Promise<Void> {
+        guard let missionOperator = DJISDKManager.missionControl()?.waypointMissionOperator() else {
+            return Promise(error: DJIExtraWaypointMissionError.getMissionOperatorFailed)
+        }
+        return Promise {
+            missionOperator.pauseMission(completion: $0.resolve)
+        }
+    }
+    
+    public func resumeMission() -> Promise<Void> {
+        guard let missionOperator = DJISDKManager.missionControl()?.waypointMissionOperator() else {
+            return Promise(error: DJIExtraWaypointMissionError.getMissionOperatorFailed)
+        }
+        return Promise {
+            missionOperator.resumeMission(completion: $0.resolve)
+        }
+    }
+    
+    public func stopMission() -> Promise<Void> {
+        guard let missionOperator = DJISDKManager.missionControl()?.waypointMissionOperator() else {
+            return Promise(error: DJIExtraWaypointMissionError.getMissionOperatorFailed)
+        }
+        return Promise {
+            missionOperator.stopMission(completion: $0.resolve)
+        }
+    }
+    
     private func missionFinished() {
         if currentMissionIndex == waypointMissions.count - 1 {
             delegate?.waypointMissionDidFinished()
@@ -123,6 +161,7 @@ public class DJIExtraWaypointMission: DJIMission {
                 self.startExecute(mission: currentMission)
             }.catch { (error) in
                 self.delegate?.waypointMissionDidStop(self.currentMission, error: error)
+                DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
             }
         }
     }
