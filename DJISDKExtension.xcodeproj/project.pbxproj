@@ -36,6 +36,7 @@
 		85D118D921E4865B00766BE5 /* DJISDKExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8532A08321378F14008BCC84 /* DJISDKExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85D118DF21E48A5300766BE5 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118DE21E48A5300766BE5 /* RootTableViewController.swift */; };
 		85D118E121E49A9F00766BE5 /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118E021E49A9F00766BE5 /* ProductInfoViewController.swift */; };
+		85D118E321E49E2A00766BE5 /* ExtraWaypointMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118E221E49E2A00766BE5 /* ExtraWaypointMissionViewController.swift */; };
 		C0C8931F2138DC1E00986A3A /* DJIMediaManager+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */; };
 		C0C893202138DC1E00986A3A /* DJIMediaFile+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */; };
 		C0C893212138DC1E00986A3A /* DJICamera+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */; };
@@ -110,6 +111,7 @@
 		85D118D321E4862500766BE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85D118DE21E48A5300766BE5 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		85D118E021E49A9F00766BE5 /* ProductInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
+		85D118E221E49E2A00766BE5 /* ExtraWaypointMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraWaypointMissionViewController.swift; sourceTree = "<group>"; };
 		9CBCCC308A30FD9AF5FA77BD /* Pods-DJIExtensionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJIExtensionDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJIExtensionDemo/Pods-DJIExtensionDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B763E7869565DCA034F402A8 /* Pods-DJISDKExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKExtension/Pods-DJISDKExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaManager+Promise.swift"; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				85D118CB21E4862400766BE5 /* Main.storyboard */,
 				85D118DE21E48A5300766BE5 /* RootTableViewController.swift */,
 				85D118E021E49A9F00766BE5 /* ProductInfoViewController.swift */,
+				85D118E221E49E2A00766BE5 /* ExtraWaypointMissionViewController.swift */,
 			);
 			path = DJIExtensionDemo;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				85D118E121E49A9F00766BE5 /* ProductInfoViewController.swift in Sources */,
 				85D118C821E4862400766BE5 /* AppDelegate.swift in Sources */,
 				85D118DF21E48A5300766BE5 /* RootTableViewController.swift in Sources */,
+				85D118E321E49E2A00766BE5 /* ExtraWaypointMissionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
