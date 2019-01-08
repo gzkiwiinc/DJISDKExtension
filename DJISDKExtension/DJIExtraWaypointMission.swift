@@ -11,6 +11,7 @@ import PromiseKit
 
 public protocol DJIExtraWaypointMissionDelegate: class {
     func waypointMissionPrepareStart(_ mission: DJIWaypointMission)
+    func waypointMissionExecuting(_ mission: DJIWaypointMission, executionEvent: DJIWaypointMissionExecutionEvent)
     func waypointMissionDidStop(_ mission: DJIWaypointMission, error: Error?)
     func waypointMissionDidFinished()
 }
@@ -71,6 +72,13 @@ public class DJIExtraWaypointMission: DJIMission {
         }
         currentWaypointIndexInMission = 0
         currentMissionIndex = 0
+        missionOperator.addListener(toExecutionEvent: self, with: listenerQueue) { [weak self] (executionEvent) in
+            guard let self = self else { return }
+            self.delegate?.waypointMissionExecuting(self.currentMission, executionEvent: executionEvent)
+            if let progress = executionEvent.progress {
+                self.currentWaypointIndexInMission = progress.targetWaypointIndex
+            }
+        }
         missionOperator.addListener(toFinished: self, with: listenerQueue) { [weak self] (error) in
             guard let self = self else { return }
             if let error = error {
