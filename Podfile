@@ -13,3 +13,11 @@ target 'DJISDKExtension' do
   end
 
 end
+
+target 'DJIExtensionDemo' do
+  use_frameworks!
+
+  pod 'DJI-SDK-iOS', '~> 4.8.1'
+  pod 'PromiseKit', '~> 6.4'
+  
+end
