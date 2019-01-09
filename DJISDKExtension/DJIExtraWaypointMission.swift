@@ -191,14 +191,18 @@ public class DJIExtraWaypointMission: DJIMission {
     
     static func groupWaypoints(_ waypoints: [DJIWaypoint]) -> [[DJIWaypoint]] {
         let waypointMaxSize = 99
+        let waypointGroupMinSize = 2
+        let warningGroupSize = waypointMaxSize + waypointGroupMinSize
+        
         let groupCount = Int(ceil(Float(waypoints.count)/Float(waypointMaxSize)))
         var waypointsGroup = [[DJIWaypoint]]()
         var editWaypoints = waypoints.dropFirst(0)
-        for _ in 0 ..< groupCount {
-            if editWaypoints.count == 100 { // 99 + 1, waypoints should at least 2
-                let groupWaypoints = waypoints.prefix(98)
+        for i in 0 ..< groupCount {
+            if i == (groupCount - 2) && editWaypoints.count < warningGroupSize { // ensure the last group size is equal or greater than min size
+                let lastTwoSize = editWaypoints.count - waypointGroupMinSize
+                let groupWaypoints = waypoints.prefix(lastTwoSize)
                 waypointsGroup.append(Array(groupWaypoints))
-                editWaypoints = editWaypoints.dropFirst(98)
+                editWaypoints = editWaypoints.dropFirst(lastTwoSize)
             } else {
                 let groupWaypoints = editWaypoints.prefix(waypointMaxSize)
                 waypointsGroup.append(Array(groupWaypoints))
