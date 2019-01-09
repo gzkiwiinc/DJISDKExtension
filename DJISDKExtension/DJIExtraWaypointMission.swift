@@ -93,7 +93,7 @@ public class DJIExtraWaypointMission: DJIMission {
             if let error = error {
                 self.delegate?.waypointMissionDidStop(self.currentMission, error: error)
                 DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
-            } else if self.targetWaypointIndex == self.currentMission.waypointCount - 1 { // is stop at last waypoint
+            } else if self.currentWaypointIndexInMission == self.currentMission.waypointCount - 1 { // is stop at last waypoint
                 self.missionFinished()
             } else {
                 // user trigger goHome, waypoint mission stopped
