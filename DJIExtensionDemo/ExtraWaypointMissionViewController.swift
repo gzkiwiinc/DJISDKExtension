@@ -46,12 +46,12 @@ class ExtraWaypointMissionViewController: UIViewController {
         let offset: Double = 0.00001
         let waypoints: [DJIWaypoint] = (0 ..< count).map {
             let offset = offset * Double($0)
-            var long = basicLong
+            let long = basicLong + offset
             var lat = basicLat
             if $0 % 2 == 0 {
-                long = basicLong + offset
+                lat = basicLat + 0.00001
             } else {
-                lat = basicLat + offset
+                lat = basicLat - 0.00001
             }
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
             return DJIWaypoint(coordinate: coordinate)
