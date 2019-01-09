@@ -25,6 +25,8 @@ class ExtraWaypointMissionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        coordinateLatTextField.text = "30.294873"
+        coordinateLongTextField.text = "120.023017"
     }
     
     @IBAction func start(_ sender: Any) {
@@ -37,18 +39,25 @@ class ExtraWaypointMissionViewController: UIViewController {
     }
     
     private func createMission() -> DJIExtraWaypointMission? {
-        let lat = Double(coordinateLatTextField.text!)!
+        let basicLat = Double(coordinateLatTextField.text!)!
         let basicLong = Double(coordinateLongTextField.text!)!
         
         let count = Int(waypointsCountTextField.text!)!
-        let offset: Double = 0.000001
+        let offset: Double = 0.00001
         let waypoints: [DJIWaypoint] = (0 ..< count).map {
             let offset = offset * Double($0)
-            let long = basicLong + offset
+            var long = basicLong
+            var lat = basicLat
+            if $0 % 2 == 0 {
+                long = basicLong + offset
+            } else {
+                lat = basicLat + offset
+            }
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
             return DJIWaypoint(coordinate: coordinate)
         }
         let waypointMission = DJIMutableWaypointMission()
+        waypointMission.finishedAction = .noAction
         do {
             let extraMission = try DJIExtraWaypointMission(mission: waypointMission, waypoints: waypoints)
             return extraMission
@@ -87,27 +96,42 @@ class ExtraWaypointMissionViewController: UIViewController {
 extension ExtraWaypointMissionViewController: DJIExtraWaypointMissionDelegate {
     
     func waypointMissionPrepareStart(_ mission: DJIWaypointMission) {
-        SVProgressHUD.showInfo(withStatus: "PrepareStart")
+        DispatchQueue.main.async {
+            self.executeStateLabel.text = "PrepareStart"
+        }
     }
     
     func waypointMissionStartExecuting(_ mission: DJIWaypointMission, missionIndex: Int) {
-        SVProgressHUD.showInfo(withStatus: "StartExecuting")
+        DispatchQueue.main.async {
+            self.executeStateLabel.text = "StartExecuting"
+        }
     }
     
     func waypointMissionDidStop(_ mission: DJIWaypointMission, error: Error?) {
-        SVProgressHUD.showInfo(withStatus: "DidStop")
+        DispatchQueue.main.async {
+            self.executeStateLabel.text = "DidStop"
+            if let error = error {
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
+            }
+        }
     }
     
     func waypointMissionDidPaused(_ mission: DJIWaypointMission) {
-        SVProgressHUD.showInfo(withStatus: "DidPaused")
+        DispatchQueue.main.async {
+            self.executeStateLabel.text = "DidPaused"
+        }
     }
     
     func waypointMissionDidFinished() {
-        SVProgressHUD.showInfo(withStatus: "DidFinished")
+        DispatchQueue.main.async {
+            self.executeStateLabel.text = "DidFinished"
+        }
     }
     
     func waypointMissionExecuting(_ mission: DJIWaypointMission, executionEvent: DJIWaypointMissionExecutionEvent) {
-        waypointIndex.text = String(extraWaypointMission!.targetWaypointIndex)
+        DispatchQueue.main.async {
+            self.waypointIndex.text = String(self.extraWaypointMission!.targetWaypointIndex)
+        }
     }
     
 }
