@@ -50,9 +50,6 @@ public class DJIExtraWaypointMission: DJIMission {
     ///  Initialize a `DJIExtraWaypointMission` by copying the parameters from the input mission.
     public init(mission: DJIWaypointMission, waypoints: [DJIWaypoint]) throws {
         configuredMission = mission
-        if let error = mission.checkParameters() {
-            throw error
-        }
         orignalWaypoints = waypoints
         let groupedWaypoints = DJIExtraWaypointMission.groupWaypoints(waypoints)
         waypointMissions = groupedWaypoints.map { (waypoints) -> DJIWaypointMission in
@@ -63,6 +60,9 @@ public class DJIExtraWaypointMission: DJIMission {
         }
         try waypointMissions.forEach {
             if let error = $0.checkValidity() {
+                throw error
+            }
+            if let error = $0.checkParameters() {
                 throw error
             }
         }
@@ -186,13 +186,16 @@ public class DJIExtraWaypointMission: DJIMission {
         let waypointMaxSize = 99
         let groupCount = Int(ceil(Float(waypoints.count)/Float(waypointMaxSize)))
         var waypointsGroup = [[DJIWaypoint]]()
+        var editWaypoints = waypoints.dropFirst(0)
         for _ in 0 ..< groupCount {
-            if waypoints.count == 100 { // 99 + 1, waypoints should at least 2
-                let groupWaypoints = waypoints.dropFirst(98)
+            if editWaypoints.count == 100 { // 99 + 1, waypoints should at least 2
+                let groupWaypoints = waypoints.prefix(98)
                 waypointsGroup.append(Array(groupWaypoints))
+                editWaypoints = editWaypoints.dropFirst(98)
             } else {
-                let groupWaypoints = waypoints.dropFirst(waypointMaxSize)
+                let groupWaypoints = editWaypoints.prefix(waypointMaxSize)
                 waypointsGroup.append(Array(groupWaypoints))
+                editWaypoints = editWaypoints.dropFirst(waypointMaxSize)
             }
         }
         return waypointsGroup
