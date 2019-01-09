@@ -168,8 +168,15 @@ public class DJIExtraWaypointMission: DJIMission {
     
     private func missionIsReadyToExecute(_ missionOperator: DJIWaypointMissionOperator) -> Promise<Void> {
         missionOperator.removeListener(ofUploadEvents: self)
+        if missionOperator.currentState == .readyToExecute {
+            return Promise.value(())
+        }
         return Promise { seal in
             missionOperator.addListener(toUploadEvent: self, with: listenerQueue) { (uploadEvent) in
+                print(uploadEvent.currentState)
+                if let progress = uploadEvent.progress {
+                    print("\(progress.uploadedWaypointIndex)/\(progress.totalWaypointCount)")
+                }
                 if uploadEvent.currentState == .readyToExecute {
                     seal.fulfill()
                     missionOperator.removeListener(ofUploadEvents: self)
