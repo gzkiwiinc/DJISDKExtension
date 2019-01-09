@@ -21,7 +21,7 @@ class ExtraWaypointMissionViewController: UIViewController {
     @IBOutlet weak var executeStateLabel: UILabel!
     @IBOutlet weak var waypointIndex: UILabel!
     
-    var wayPointMission: DJIExtraWaypointMission?
+    var extraWaypointMission: DJIExtraWaypointMission?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,8 @@ class ExtraWaypointMissionViewController: UIViewController {
     
     @IBAction func start(_ sender: Any) {
         guard let mission = createMission() else { return }
-        wayPointMission = mission
+        extraWaypointMission = mission
+        mission.delegate = self
         mission.startMission().catch { (error) in
             SVProgressHUD.showError(withStatus: error.localizedDescription)
         }
@@ -58,26 +59,29 @@ class ExtraWaypointMissionViewController: UIViewController {
     }
     
     @IBAction func pause(_ sender: Any) {
-        guard let mission = wayPointMission else { return }
+        guard let mission = extraWaypointMission else { return }
         mission.pauseMission().catch { (error) in
             SVProgressHUD.showError(withStatus: error.localizedDescription)
         }
     }
     
     @IBAction func resume(_ sender: Any) {
-        guard let mission = wayPointMission else { return }
+        guard let mission = extraWaypointMission else { return }
         mission.resumeMission().catch { (error) in
             SVProgressHUD.showError(withStatus: error.localizedDescription)
         }
     }
     
     @IBAction func stop(_ sender: Any) {
-        guard let mission = wayPointMission else { return }
+        guard let mission = extraWaypointMission else { return }
         mission.stopMission().catch { (error) in
             SVProgressHUD.showError(withStatus: error.localizedDescription)
         }
     }
     
+    @IBAction func hideKeyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
 }
 
 extension ExtraWaypointMissionViewController: DJIExtraWaypointMissionDelegate {
@@ -103,7 +107,7 @@ extension ExtraWaypointMissionViewController: DJIExtraWaypointMissionDelegate {
     }
     
     func waypointMissionExecuting(_ mission: DJIWaypointMission, executionEvent: DJIWaypointMissionExecutionEvent) {
-        waypointIndex.text = String(wayPointMission!.targetWaypointIndex)
+        waypointIndex.text = String(extraWaypointMission!.targetWaypointIndex)
     }
     
 }

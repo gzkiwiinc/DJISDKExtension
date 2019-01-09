@@ -106,7 +106,7 @@
         <!--Device info-->
         <scene sceneID="oUb-51-JPh">
             <objects>
-                <viewController title="Device info" id="qQd-NC-LSZ" customClass="ProductInfoViewController" customModule="DJILibDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Device info" id="qQd-NC-LSZ" customClass="ProductInfoViewController" customModule="DJIExtensionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1cE-TF-Hck">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,16 +257,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ro-ig-Tkm">
+                                <rect key="frame" x="259" y="221" width="100" height="30"/>
+                                <state key="normal" title="Hide keyboard"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="p99-KF-Phu" eventType="touchUpInside" id="FiR-di-wa0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="i0S-PH-98Y" firstAttribute="leading" secondItem="Aqk-RK-G8p" secondAttribute="leading" constant="16" id="MDx-KA-00c"/>
                             <constraint firstItem="gV1-oC-34y" firstAttribute="centerX" secondItem="tmN-6k-bQW" secondAttribute="centerX" id="MMM-cm-Q5U"/>
                             <constraint firstItem="mYX-NG-6Ex" firstAttribute="top" secondItem="i0S-PH-98Y" secondAttribute="bottom" constant="16" id="MmK-Jh-tPE"/>
+                            <constraint firstItem="Aqk-RK-G8p" firstAttribute="trailing" secondItem="9Ro-ig-Tkm" secondAttribute="trailing" constant="16" id="N9S-XZ-FU8"/>
                             <constraint firstItem="kod-Nj-xah" firstAttribute="top" secondItem="4h8-3P-dXb" secondAttribute="bottom" constant="20" id="PQi-N5-Ugk"/>
                             <constraint firstItem="kod-Nj-xah" firstAttribute="centerX" secondItem="tmN-6k-bQW" secondAttribute="centerX" id="T44-Sp-bS9"/>
                             <constraint firstItem="mYX-NG-6Ex" firstAttribute="leading" secondItem="Aqk-RK-G8p" secondAttribute="leading" constant="16" id="V2L-Ka-KGO"/>
                             <constraint firstItem="i0S-PH-98Y" firstAttribute="top" secondItem="Eo6-el-Qcp" secondAttribute="bottom" constant="8" id="Wuo-Id-nz7"/>
+                            <constraint firstItem="9Ro-ig-Tkm" firstAttribute="centerY" secondItem="4h8-3P-dXb" secondAttribute="centerY" id="XaR-xm-drT"/>
                             <constraint firstItem="4h8-3P-dXb" firstAttribute="leading" secondItem="Aqk-RK-G8p" secondAttribute="leading" constant="16" id="YkL-Og-KM3"/>
                             <constraint firstItem="Eo6-el-Qcp" firstAttribute="leading" secondItem="Aqk-RK-G8p" secondAttribute="leading" constant="16" id="ae9-12-Wa1"/>
                             <constraint firstItem="Eo6-el-Qcp" firstAttribute="top" secondItem="6g0-MB-C90" secondAttribute="bottom" constant="8" id="dbn-ba-Gne"/>
