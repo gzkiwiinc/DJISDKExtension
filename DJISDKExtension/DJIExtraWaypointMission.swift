@@ -38,7 +38,7 @@ public class DJIExtraWaypointMission: DJIMission {
         return waypointMissions[currentMissionIndex]
     }
     public var targetWaypointIndex: Int {
-        var totalIndex = -1
+        var totalIndex = 0
         for i in 0 ..< currentMissionIndex {
             totalIndex += Int(waypointMissions[i].waypointCount)
         }
