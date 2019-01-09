@@ -26,6 +26,7 @@
 		858DE9032178D6340019C314 /* DJITimelineShootPhotoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE9022178D6340019C314 /* DJITimelineShootPhotoEvent.swift */; };
 		858DE905217974620019C314 /* DJITimelineDurationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE904217974620019C314 /* DJITimelineDurationEvent.swift */; };
 		858DE90721797A270019C314 /* DJITimelineBasicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */; };
+		8592C7A321E5D208001E1E6F /* DJIWaypointMissionState+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592C7A221E5D208001E1E6F /* DJIWaypointMissionState+Description.swift */; };
 		85BCB2D021E32DA60023F1A7 /* DJIExtraWaypointMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCB2CF21E32DA60023F1A7 /* DJIExtraWaypointMission.swift */; };
 		85BCB2D221E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCB2D121E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift */; };
 		85D118C821E4862400766BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118C721E4862400766BE5 /* AppDelegate.swift */; };
@@ -108,6 +109,7 @@
 		858DE9022178D6340019C314 /* DJITimelineShootPhotoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineShootPhotoEvent.swift; sourceTree = "<group>"; };
 		858DE904217974620019C314 /* DJITimelineDurationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineDurationEvent.swift; sourceTree = "<group>"; };
 		858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineBasicEvent.swift; sourceTree = "<group>"; };
+		8592C7A221E5D208001E1E6F /* DJIWaypointMissionState+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJIWaypointMissionState+Description.swift"; sourceTree = "<group>"; };
 		85BCB2CF21E32DA60023F1A7 /* DJIExtraWaypointMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIExtraWaypointMission.swift; sourceTree = "<group>"; };
 		85BCB2D121E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIExtraWaypointMissionTests.swift; sourceTree = "<group>"; };
 		85D118C521E4862400766BE5 /* DJIExtensionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJIExtensionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +197,7 @@
 		8532A08521378F14008BCC84 /* DJISDKExtension */ = {
 			isa = PBXGroup;
 			children = (
+				8592C7A121E5D1F3001E1E6F /* CustomStringConvertible */,
 				858DE8F5217833BC0019C314 /* DJISDKExtension.podspec */,
 				85BEDF36219C23BF002695F8 /* KeyManager */,
 				858938AD2196D13E00AB7619 /* Extensions */,
@@ -239,6 +242,14 @@
 				858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */,
 			);
 			path = DJITimeline;
+			sourceTree = "<group>";
+		};
+		8592C7A121E5D1F3001E1E6F /* CustomStringConvertible */ = {
+			isa = PBXGroup;
+			children = (
+				8592C7A221E5D208001E1E6F /* DJIWaypointMissionState+Description.swift */,
+			);
+			path = CustomStringConvertible;
 			sourceTree = "<group>";
 		};
 		85BEDF36219C23BF002695F8 /* KeyManager */ = {
@@ -565,6 +576,7 @@
 				85BCB2D021E32DA60023F1A7 /* DJIExtraWaypointMission.swift in Sources */,
 				858DE8F9217834560019C314 /* DJITimelineMission.swift in Sources */,
 				8532A08F2137954C008BCC84 /* DJISDKManager+Helper.swift in Sources */,
+				8592C7A321E5D208001E1E6F /* DJIWaypointMissionState+Description.swift in Sources */,
 				858DE8FD21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift in Sources */,
 				858DE9032178D6340019C314 /* DJITimelineShootPhotoEvent.swift in Sources */,
 				858DE905217974620019C314 /* DJITimelineDurationEvent.swift in Sources */,
