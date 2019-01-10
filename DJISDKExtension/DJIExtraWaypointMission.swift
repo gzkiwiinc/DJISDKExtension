@@ -21,6 +21,8 @@ public protocol DJIExtraWaypointMissionDelegate: class {
 
 public enum DJIExtraWaypointMissionError: Error {
     case getMissionOperatorFailed
+    /// mission can't stop or pause in preparing
+    case missionIsPreparing
 }
 
 /// Waypoint mission with no limit waypoints
@@ -44,6 +46,9 @@ public class DJIExtraWaypointMission: DJIMission {
         }
         return totalIndex + currentWaypointIndexInMission
     }
+    
+    /// if mission is prepareing(uploading wayoint), at this moment mission can't be paused, stop
+    public var isMissionPrepareStarting = false
     
     private let listenerQueue = DispatchQueue(label: "com.kiwiinc.MissionListenerQueue")
     
@@ -80,6 +85,7 @@ public class DJIExtraWaypointMission: DJIMission {
         }
         currentWaypointIndexInMission = 0
         currentMissionIndex = 0
+        isMissionPrepareStarting = false
         DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
         missionOperator.addListener(toExecutionEvent: self, with: listenerQueue) { [weak self] (executionEvent) in
             guard let self = self else { return }
@@ -90,6 +96,7 @@ public class DJIExtraWaypointMission: DJIMission {
             if executionEvent.currentState == .executionPaused {
                 self.delegate?.waypointMissionDidPaused(self.currentMission)
             } else if executionEvent.currentState == .executing {
+                self.isMissionPrepareStarting = false
                 self.delegate?.waypointMissionStartExecuting(self.currentMission, missionIndex: self.currentMissionIndex)
             }
         }
@@ -113,10 +120,11 @@ public class DJIExtraWaypointMission: DJIMission {
         guard let missionOperator = DJISDKManager.missionControl()?.waypointMissionOperator() else {
             return Promise(error: DJIExtraWaypointMissionError.getMissionOperatorFailed)
         }
-        delegate?.waypointMissionPrepareStart(mission)
         if let loadError = missionOperator.load(mission) {
             return Promise(error: loadError)
         }
+        delegate?.waypointMissionPrepareStart(mission)
+        isMissionPrepareStarting = true
         return Promise {
             missionOperator.uploadMission(completion: $0.resolve)
         }.then {
@@ -131,6 +139,9 @@ public class DJIExtraWaypointMission: DJIMission {
     public func pauseMission() -> Promise<Void> {
         guard let missionOperator = DJISDKManager.missionControl()?.waypointMissionOperator() else {
             return Promise(error: DJIExtraWaypointMissionError.getMissionOperatorFailed)
+        }
+        guard isMissionPrepareStarting == false else {
+            return Promise(error: DJIExtraWaypointMissionError.missionIsPreparing)
         }
         return Promise {
             missionOperator.pauseMission(completion: $0.resolve)
@@ -149,6 +160,9 @@ public class DJIExtraWaypointMission: DJIMission {
     public func stopMission() -> Promise<Void> {
         guard let missionOperator = DJISDKManager.missionControl()?.waypointMissionOperator() else {
             return Promise(error: DJIExtraWaypointMissionError.getMissionOperatorFailed)
+        }
+        guard isMissionPrepareStarting == false else {
+            return Promise(error: DJIExtraWaypointMissionError.missionIsPreparing)
         }
         return Promise {
             missionOperator.stopMission(completion: $0.resolve)
