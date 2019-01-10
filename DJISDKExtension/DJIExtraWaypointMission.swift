@@ -60,11 +60,17 @@ public class DJIExtraWaypointMission: DJIMission {
         var missions: [DJIWaypointMission] = []
         for (i,waypoints) in groupedWaypoints.enumerated() {
             let waypointMission = DJIMutableWaypointMission(mission: mission)
-            if i != groupedWaypoints.count - 1 { // only last waypoint mission finishedAction is valid
-                waypointMission.finishedAction = .noAction
-            }
             waypointMission.removeAllWaypoints()
             waypointMission.addWaypoints(waypoints)
+            
+            if i != groupedWaypoints.count - 1 { // only last waypoint mission finishedAction is valid
+                waypointMission.finishedAction = .noAction
+            } else if i == groupedWaypoints.count - 1 {
+                if waypointMission.finishedAction == .goFirstWaypoint {
+                    waypointMission.finishedAction = .noAction
+                    waypointMission.add(orignalWaypoints[0]) // add first waypoint to the end
+                }
+            }
             missions.append(waypointMission)
         }
         waypointMissions = missions
@@ -90,8 +96,9 @@ public class DJIExtraWaypointMission: DJIMission {
         missionOperator.addListener(toExecutionEvent: self, with: listenerQueue) { [weak self] (executionEvent) in
             guard let self = self else { return }
             self.delegate?.waypointMissionExecuting(self.currentMission, executionEvent: executionEvent)
-            if let progress = executionEvent.progress {
-                self.currentWaypointIndexInMission = progress.targetWaypointIndex
+            if let targetWaypointIndex = executionEvent.progress?.targetWaypointIndex
+                 , self.currentWaypointIndexInMission < targetWaypointIndex { // if finishAction is goFirstWaypoint, targetIndex will set 0
+                self.currentWaypointIndexInMission = targetWaypointIndex
             }
             if executionEvent.currentState == .executionPaused {
                 self.delegate?.waypointMissionDidPaused(self.currentMission)
