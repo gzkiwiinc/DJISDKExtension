@@ -52,12 +52,17 @@ public class DJIExtraWaypointMission: DJIMission {
         configuredMission = mission
         orignalWaypoints = waypoints
         let groupedWaypoints = DJIExtraWaypointMission.groupWaypoints(waypoints)
-        waypointMissions = groupedWaypoints.map { (waypoints) -> DJIWaypointMission in
+        var missions: [DJIWaypointMission] = []
+        for (i,waypoints) in groupedWaypoints.enumerated() {
             let waypointMission = DJIMutableWaypointMission(mission: mission)
+            if i != groupedWaypoints.count - 1 { // only last waypoint mission finishedAction is valid
+                waypointMission.finishedAction = .noAction
+            }
             waypointMission.removeAllWaypoints()
             waypointMission.addWaypoints(waypoints)
-            return waypointMission
+            missions.append(waypointMission)
         }
+        waypointMissions = missions
         try waypointMissions.forEach {
             if let error = $0.checkValidity() {
                 throw error
