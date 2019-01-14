@@ -126,9 +126,7 @@ public class DJIExtraWaypointMission: DJIMission {
             if let error = error {
                 self.delegate?.waypointMissionDidStop(self.currentMission, error: error)
                 DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
-            } else if self.currentWaypointIndexInMission == self.currentMission.waypointCount - 1,
-                    let distance = self.distanceFromEndPoint(),
-                    distance < 5 { // is stop at last waypoint
+            } else if self.currentWaypointIndexInMission == self.currentMission.waypointCount - 1{ // is stop at last waypoint
                 self.missionFinished()
             } else {
                 // user trigger goHome, waypoint mission stopped
@@ -205,8 +203,14 @@ public class DJIExtraWaypointMission: DJIMission {
     
     private func missionFinished() {
         if currentMissionIndex == waypointMissions.count - 1 {
-            delegate?.waypointMissionDidFinished()
-            DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
+            if let distance = self.distanceFromEndPoint(),
+                distance < 5 {
+                delegate?.waypointMissionDidFinished()
+                DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
+            } else {
+                self.delegate?.waypointMissionDidStop(self.currentMission, error: nil)
+                DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
+            }
         } else {
             currentMissionIndex += 1
             currentWaypointIndexInMission = 0
