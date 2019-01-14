@@ -126,7 +126,9 @@ public class DJIExtraWaypointMission: DJIMission {
             if let error = error {
                 self.delegate?.waypointMissionDidStop(self.currentMission, error: error)
                 DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
-            } else if self.currentWaypointIndexInMission == self.currentMission.waypointCount - 1 { // is stop at last waypoint
+            } else if self.currentWaypointIndexInMission == self.currentMission.waypointCount - 1,
+                    let distance = self.distanceFromEndPoint(),
+                    distance < 5 { // is stop at last waypoint
                 self.missionFinished()
             } else {
                 // user trigger goHome, waypoint mission stopped
@@ -135,6 +137,17 @@ public class DJIExtraWaypointMission: DJIMission {
             }
         }
         return startExecute(mission: waypointMissions[0])
+    }
+    
+    // Distance between current location and endpoint location in meters
+    private func distanceFromEndPoint() -> Double? {
+        guard let locationKey = DJIFlightControllerKey(param: DJIFlightControllerParamAircraftLocation),
+            let value = DJISDKManager.keyManager()?.getValueFor(locationKey),
+            let aircraftLocation = value.value as? CLLocation else {
+                return nil
+        }
+        guard let lastWaypoint = orignalWaypoints.last else { return nil }
+        return aircraftLocation.distance(from: lastWaypoint.location)
     }
     
     func startExecute(mission: DJIWaypointMission) -> Promise<Void> {
