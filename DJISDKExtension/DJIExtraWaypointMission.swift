@@ -23,6 +23,9 @@ public enum DJIExtraWaypointMissionError: Error {
     case getMissionOperatorFailed
     /// mission can't stop or pause in preparing
     case missionIsPreparing
+    /// waypoint count is less than 2
+    case waypointCountInvalid
+    case waypointDistanceInvalid(Int)
 }
 
 /// Waypoint mission with no limit waypoints
@@ -56,6 +59,17 @@ public class DJIExtraWaypointMission: DJIMission {
     public init(mission: DJIWaypointMission, waypoints: [DJIWaypoint]) throws {
         configuredMission = mission
         orignalWaypoints = waypoints
+        guard waypoints.count > 1 else {
+            throw DJIExtraWaypointMissionError.waypointCountInvalid
+        }
+        for i in 1 ..< waypoints.count {
+            let currentWaypoint = waypoints[i]
+            let preWaypoint = waypoints[i-1]
+            if preWaypoint.isInValidDistance(currentWaypoint) == false {
+                throw DJIExtraWaypointMissionError.waypointDistanceInvalid(i)
+            }
+        }
+        
         let groupedWaypoints = DJIExtraWaypointMission.groupWaypoints(waypoints)
         var missions: [DJIWaypointMission] = []
         for (i,waypoints) in groupedWaypoints.enumerated() {
