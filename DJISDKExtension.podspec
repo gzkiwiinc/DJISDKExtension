@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "DJISDKExtension"
-  s.version      = "0.3.0"
+  s.version      = "0.3.1"
   s.summary      = "Extension for DJISDK-iOS."
   s.description  = "Extension for DJISDK-iOS, only support Swift."
   s.homepage     = "https://github.com/gzkiwiinc/DJISDKExtension"
