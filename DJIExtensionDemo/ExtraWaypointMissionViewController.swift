@@ -20,13 +20,14 @@ class ExtraWaypointMissionViewController: UIViewController {
     
     @IBOutlet weak var executeStateLabel: UILabel!
     @IBOutlet weak var waypointIndex: UILabel!
+    @IBOutlet weak var reachedIndex: UILabel!
     
     var extraWaypointMission: DJIExtraWaypointMission?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        coordinateLatTextField.text = "30.294873"
-        coordinateLongTextField.text = "120.023017"
+        coordinateLatTextField.text = "30.278799"
+        coordinateLongTextField.text = "120.124275"
     }
     
     @IBAction func start(_ sender: Any) {
@@ -132,6 +133,13 @@ extension ExtraWaypointMissionViewController: DJIExtraWaypointMissionDelegate {
         DispatchQueue.main.async {
             self.waypointIndex.text = String(self.extraWaypointMission!.targetWaypointIndex)
         }
+    }
+    
+    func waypointMissionExecuting(_ mission: DJIWaypointMission, waypointIsReached: Int) {
+        DispatchQueue.main.async {
+            self.reachedIndex.text = "reached: \(waypointIsReached)"
+        }
+        print("reached: \(waypointIsReached)")
     }
     
 }

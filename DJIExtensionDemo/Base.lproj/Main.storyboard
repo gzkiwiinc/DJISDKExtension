@@ -264,6 +264,12 @@
                                     <action selector="hideKeyboard:" destination="p99-KF-Phu" eventType="touchUpInside" id="FiR-di-wa0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reached waypointIndex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmy-5u-CtX">
+                                <rect key="frame" x="94" y="330" width="187" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -277,10 +283,12 @@
                             <constraint firstItem="i0S-PH-98Y" firstAttribute="top" secondItem="Eo6-el-Qcp" secondAttribute="bottom" constant="8" id="Wuo-Id-nz7"/>
                             <constraint firstItem="9Ro-ig-Tkm" firstAttribute="centerY" secondItem="4h8-3P-dXb" secondAttribute="centerY" id="XaR-xm-drT"/>
                             <constraint firstItem="4h8-3P-dXb" firstAttribute="leading" secondItem="Aqk-RK-G8p" secondAttribute="leading" constant="16" id="YkL-Og-KM3"/>
+                            <constraint firstItem="Xmy-5u-CtX" firstAttribute="centerX" secondItem="tmN-6k-bQW" secondAttribute="centerX" id="ZsL-Mg-YgU"/>
                             <constraint firstItem="Eo6-el-Qcp" firstAttribute="leading" secondItem="Aqk-RK-G8p" secondAttribute="leading" constant="16" id="ae9-12-Wa1"/>
                             <constraint firstItem="Eo6-el-Qcp" firstAttribute="top" secondItem="6g0-MB-C90" secondAttribute="bottom" constant="8" id="dbn-ba-Gne"/>
                             <constraint firstItem="gih-HC-hgY" firstAttribute="top" secondItem="kod-Nj-xah" secondAttribute="bottom" constant="8" id="ebF-Af-CJ7"/>
                             <constraint firstItem="gih-HC-hgY" firstAttribute="centerX" secondItem="tmN-6k-bQW" secondAttribute="centerX" id="j1Q-Zb-zi2"/>
+                            <constraint firstItem="Xmy-5u-CtX" firstAttribute="top" secondItem="gih-HC-hgY" secondAttribute="bottom" constant="8" id="pje-jG-TLF"/>
                             <constraint firstItem="4h8-3P-dXb" firstAttribute="top" secondItem="mYX-NG-6Ex" secondAttribute="bottom" constant="8" id="rpd-7V-Voq"/>
                             <constraint firstItem="6g0-MB-C90" firstAttribute="top" secondItem="Aqk-RK-G8p" secondAttribute="top" constant="16" id="trt-36-f6X"/>
                             <constraint firstItem="Aqk-RK-G8p" firstAttribute="bottom" secondItem="gV1-oC-34y" secondAttribute="bottom" constant="20" id="v1R-YQ-O97"/>
@@ -292,6 +300,7 @@
                         <outlet property="coordinateLatTextField" destination="Eo6-el-Qcp" id="hQe-ih-Yxl"/>
                         <outlet property="coordinateLongTextField" destination="i0S-PH-98Y" id="I6A-PE-Kbj"/>
                         <outlet property="executeStateLabel" destination="kod-Nj-xah" id="ota-8j-oxt"/>
+                        <outlet property="reachedIndex" destination="Xmy-5u-CtX" id="l2Y-xg-9aG"/>
                         <outlet property="waypointIndex" destination="gih-HC-hgY" id="7HY-Gy-nOl"/>
                         <outlet property="waypointsCountTextField" destination="4h8-3P-dXb" id="TUd-dc-lPz"/>
                     </connections>
