@@ -17,6 +17,7 @@ public protocol DJIExtraWaypointMissionDelegate: class {
     func waypointMissionDidPaused(_ mission: DJIWaypointMission)
     func waypointMissionDidFinished()
     func waypointMissionExecuting(_ mission: DJIWaypointMission, executionEvent: DJIWaypointMissionExecutionEvent)
+    func waypointMissionExecuting(_ mission: DJIWaypointMission, waypointIsReached: Int)
 }
 
 public enum DJIExtraWaypointMissionError: Error {
@@ -106,14 +107,29 @@ public class DJIExtraWaypointMission: DJIMission {
         currentWaypointIndexInMission = 0
         currentMissionIndex = 0
         isMissionPrepareStarting = false
+        startListenMissionState(missionOperator)
+        return startExecute(mission: waypointMissions[0])
+    }
+    
+    private var reachedWaypoIndex = -1
+    private func startListenMissionState(_ missionOperator: DJIWaypointMissionOperator) {
+        reachedWaypoIndex = -1
         DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
         missionOperator.addListener(toExecutionEvent: self, with: listenerQueue) { [weak self] (executionEvent) in
             guard let self = self else { return }
             self.delegate?.waypointMissionExecuting(self.currentMission, executionEvent: executionEvent)
             if let targetWaypointIndex = executionEvent.progress?.targetWaypointIndex
-                 , self.currentWaypointIndexInMission < targetWaypointIndex { // if finishAction is goFirstWaypoint, targetIndex will set 0
+                , self.currentWaypointIndexInMission < targetWaypointIndex { // if finishAction is goFirstWaypoint, targetIndex will set 0
                 self.currentWaypointIndexInMission = targetWaypointIndex
             }
+            
+            if let progress = executionEvent.progress
+             , progress.isWaypointReached
+             , self.reachedWaypoIndex != progress.targetWaypointIndex {
+                self.delegate?.waypointMissionExecuting(self.currentMission, waypointIsReached: self.targetWaypointIndex)
+                self.reachedWaypoIndex = progress.targetWaypointIndex
+            }
+            
             if executionEvent.currentState == .executionPaused {
                 self.delegate?.waypointMissionDidPaused(self.currentMission)
             } else if executionEvent.currentState == .executing {
@@ -134,7 +150,6 @@ public class DJIExtraWaypointMission: DJIMission {
                 DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
             }
         }
-        return startExecute(mission: waypointMissions[0])
     }
     
     // Distance between current location and endpoint location in meters
