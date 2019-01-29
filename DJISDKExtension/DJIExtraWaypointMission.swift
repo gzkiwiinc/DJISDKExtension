@@ -250,7 +250,7 @@ public class DJIExtraWaypointMission: DJIMission {
                     print("\(progress.uploadedWaypointIndex)/\(progress.totalWaypointCount)")
                 }
                 if uploadEvent.currentState == .readyToExecute {
-                    seal.fulfill()
+                    seal.fulfill(())
                     missionOperator.removeListener(ofUploadEvents: self)
                 }
             }
