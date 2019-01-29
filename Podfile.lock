@@ -1,5 +1,5 @@
 PODS:
-  - DJI-SDK-iOS (4.8.2)
+  - DJI-SDK-iOS (4.9)
   - PromiseKit (6.8.2):
     - PromiseKit/CorePromise (= 6.8.2)
     - PromiseKit/Foundation (= 6.8.2)
@@ -12,7 +12,7 @@ PODS:
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - DJI-SDK-iOS (~> 4.8.1)
+  - DJI-SDK-iOS (~> 4.8)
   - PromiseKit (~> 6.4)
   - SVProgressHUD
 
@@ -23,10 +23,10 @@ SPEC REPOS:
     - SVProgressHUD
 
 SPEC CHECKSUMS:
-  DJI-SDK-iOS: 1d29d7baa1cdeb19ea490bad47cf8419ce4f1055
+  DJI-SDK-iOS: c2218cdc60ff90d04e2c4d5124bed81d3db27eb0
   PromiseKit: 8200c4555a5b433ac26f5143093cb792ee2c3426
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: ce8b6fa0c7c05d491b5e3b8187f70922c28ca613
+PODFILE CHECKSUM: 877325c63b9dbe8a3e436b8658efdd6d7a572df9
 
 COCOAPODS: 1.5.3
