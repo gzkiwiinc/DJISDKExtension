@@ -18,10 +18,10 @@ Pod::Spec.new do |s|
   s.swift_version = "4.2"
   s.ios.deployment_target = "9.0"
   s.requires_arc = true
+  s.xcconfig = { 'VALID_ARCHS' => 'arm64 arm64e x86_64' }
 
   s.source       = { :git => "https://github.com/gzkiwiinc/DJISDKExtension.git", :tag => "#{s.version}" }
   s.source_files  = "DJISDKExtension/*.swift", "DJISDKExtension/**/*.swift"
-
 
   s.dependency "DJI-SDK-iOS", "~> 4.8"
   s.dependency "PromiseKit", "~> 6.4"
