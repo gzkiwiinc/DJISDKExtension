@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "DJISDKExtension"
-  s.version      = "0.4.0"
+  s.version      = "0.4.1"
   s.summary      = "Extension for DJISDK-iOS."
   s.description  = "Extension for DJISDK-iOS, only support Swift."
   s.homepage     = "https://github.com/gzkiwiinc/DJISDKExtension"
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.swift_version = "4.2"
   s.ios.deployment_target = "9.0"
   s.requires_arc = true
-  s.xcconfig = { 'VALID_ARCHS' => 'arm64 arm64e x86_64' }
+  s.xcconfig = { 'VALID_ARCHS' => 'arm64 arm64e' }
 
   s.source       = { :git => "https://github.com/gzkiwiinc/DJISDKExtension.git", :tag => "#{s.version}" }
   s.source_files  = "DJISDKExtension/*.swift", "DJISDKExtension/**/*.swift"
