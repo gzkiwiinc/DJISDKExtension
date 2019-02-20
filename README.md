@@ -1,6 +1,6 @@
 # DJISDKExtension
 
-Extension for DJISDK-iOS.
+Extension for DJI [Mobile SDK for iOS](https://github.com/dji-sdk/Mobile-SDK-iOS).
 
 ## Installation
 
