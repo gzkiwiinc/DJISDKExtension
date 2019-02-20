@@ -7,7 +7,6 @@
 //
 
 import DJISDK
-import PromiseKit
 
 extension DJICameraISO {
     public init?(isoValue: UInt) {
