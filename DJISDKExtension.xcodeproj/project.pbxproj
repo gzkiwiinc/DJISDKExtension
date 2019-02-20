@@ -15,6 +15,7 @@
 		857324C921BE4D8300E11CA8 /* DJICameraKeyedValue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857324C821BE4D8300E11CA8 /* DJICameraKeyedValue+Extension.swift */; };
 		8576B049215DD17100B5B560 /* DJIGimbal+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8576B048215DD17100B5B560 /* DJIGimbal+Promise.swift */; };
 		8576B04B215E330B00B5B560 /* DJIFlightController+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8576B04A215E330B00B5B560 /* DJIFlightController+Promise.swift */; };
+		85799C6D221D37750038CDBE /* DJIMissionControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85799C6C221D37750038CDBE /* DJIMissionControl+Extension.swift */; };
 		858938A32195340A00AB7619 /* DJISDKTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858938A22195340A00AB7619 /* DJISDKTimelineTests.swift */; };
 		858938A52195340A00AB7619 /* DJISDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8532A08321378F14008BCC84 /* DJISDKExtension.framework */; };
 		858938AF2196D16800AB7619 /* Camera+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858938AE2196D16800AB7619 /* Camera+Extension.swift */; };
@@ -98,6 +99,7 @@
 		857324C821BE4D8300E11CA8 /* DJICameraKeyedValue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJICameraKeyedValue+Extension.swift"; sourceTree = "<group>"; };
 		8576B048215DD17100B5B560 /* DJIGimbal+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIGimbal+Promise.swift"; sourceTree = "<group>"; };
 		8576B04A215E330B00B5B560 /* DJIFlightController+Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJIFlightController+Promise.swift"; sourceTree = "<group>"; };
+		85799C6C221D37750038CDBE /* DJIMissionControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJIMissionControl+Extension.swift"; sourceTree = "<group>"; };
 		858938A02195340A00AB7619 /* DJISDKExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DJISDKExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		858938A22195340A00AB7619 /* DJISDKTimelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJISDKTimelineTests.swift; sourceTree = "<group>"; };
 		858938A42195340A00AB7619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				8523C63B21EC2AF900EE33B0 /* DJIWaypoint+Extension.swift */,
 				858938AE2196D16800AB7619 /* Camera+Extension.swift */,
+				85799C6C221D37750038CDBE /* DJIMissionControl+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				85BCB2D021E32DA60023F1A7 /* DJIExtraWaypointMission.swift in Sources */,
 				858DE8F9217834560019C314 /* DJITimelineMission.swift in Sources */,
 				8532A08F2137954C008BCC84 /* DJISDKManager+Helper.swift in Sources */,
+				85799C6D221D37750038CDBE /* DJIMissionControl+Extension.swift in Sources */,
 				8592C7A321E5D208001E1E6F /* DJIWaypointMissionState+Description.swift in Sources */,
 				858DE8FD21787D4B0019C314 /* DJITimelineAircraftYawEvent.swift in Sources */,
 				858DE9032178D6340019C314 /* DJITimelineShootPhotoEvent.swift in Sources */,
