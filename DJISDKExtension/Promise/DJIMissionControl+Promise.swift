@@ -11,7 +11,7 @@ import PromiseKit
 
 extension DJIMissionControl {
     
-    /// if a mission is stated, stop mission.
+    /// if a mission is started, stop mission.
     public func stopStartedMission() -> Promise<Void> {
         guard let startedOperator = getStartedOperator() else {
             return Promise.value(())
