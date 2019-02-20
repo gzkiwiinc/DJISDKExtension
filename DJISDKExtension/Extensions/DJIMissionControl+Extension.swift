@@ -10,7 +10,7 @@ import DJISDK
 
 extension DJIMissionControl {
     
-    public enum DJIMissionOperator {
+    public enum DJIMissionOperatorType {
         case waypointMission
         case hotpointMission
         case followMeMission
@@ -24,23 +24,42 @@ extension DJIMissionControl {
         return getStartedOperator() == nil
     }
     
-    public func getStartedOperator() -> DJIMissionOperator? {
+    public func getStartedOperator() -> DJIMissionOperatorType? {
         if waypointMissionOperator().isStarted {
-            return DJIMissionOperator.waypointMission
+            return DJIMissionOperatorType.waypointMission
         } else if hotpointMissionOperator().isStarted {
-            return DJIMissionOperator.hotpointMission
+            return DJIMissionOperatorType.hotpointMission
         } else if followMeMissionOperator().isStarted {
-            return DJIMissionOperator.followMeMission
+            return DJIMissionOperatorType.followMeMission
         } else if activeTrackMissionOperator().isStarted {
-            return DJIMissionOperator.activeTrackMission
+            return DJIMissionOperatorType.activeTrackMission
         } else if tapFlyMissionOperator().isStarted {
-            return DJIMissionOperator.tapFlyMission
+            return DJIMissionOperatorType.tapFlyMission
         } else if panoramaMissionOperator().isStarted {
-            return DJIMissionOperator.panoramaMission
+            return DJIMissionOperatorType.panoramaMission
         } else if intelligentHotpointMissionOperator().isStarted {
-            return DJIMissionOperator.intelligentHotpointMission
+            return DJIMissionOperatorType.intelligentHotpointMission
         } else {
             return nil
+        }
+    }
+    
+    public func getOperator(_ missionOperator: DJIMissionOperatorType) -> DJIMissionOperator {
+        switch missionOperator {
+        case .waypointMission:
+            return waypointMissionOperator()
+        case .hotpointMission:
+            return hotpointMissionOperator()
+        case .followMeMission:
+            return followMeMissionOperator()
+        case .activeTrackMission:
+            return activeTrackMissionOperator()
+        case .tapFlyMission:
+            return tapFlyMissionOperator()
+        case .panoramaMission:
+            return panoramaMissionOperator()
+        case .intelligentHotpointMission:
+            return intelligentHotpointMissionOperator()
         }
     }
 }
