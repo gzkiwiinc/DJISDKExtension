@@ -9,12 +9,14 @@
 import UIKit
 import DJISDK
 import SVProgressHUD
+import DJISDKExtension
 
 class ProductInfoViewController: UIViewController, DJIAppActivationManagerDelegate {
     
     @IBOutlet weak var lbActivation: UILabel!
     @IBOutlet weak var lbBinding: UILabel!
     @IBOutlet weak var lbFirmware: UILabel!
+    @IBOutlet weak var lbPitch: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,9 @@ class ProductInfoViewController: UIViewController, DJIAppActivationManagerDelega
             }
         })
         
+        if let attitude = DJISDKManager.aircraft?.gimbal?.gimbalAttitude {
+            lbPitch.text = String(attitude.pitch)
+        }
     }
     
     

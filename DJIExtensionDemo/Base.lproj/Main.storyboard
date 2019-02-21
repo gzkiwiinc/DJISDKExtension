@@ -137,6 +137,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gimbalPitch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAP-gh-Z5f">
+                                <rect key="frame" x="142.5" y="183" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -146,8 +152,10 @@
                             <constraint firstItem="lvs-t1-YTY" firstAttribute="top" secondItem="gdf-B1-aU2" secondAttribute="top" constant="20" id="JhH-E9-9ui"/>
                             <constraint firstItem="gdf-B1-aU2" firstAttribute="bottom" secondItem="P29-G4-syI" secondAttribute="bottom" constant="40" id="NA6-LL-662"/>
                             <constraint firstItem="V0s-yr-jvZ" firstAttribute="centerX" secondItem="1cE-TF-Hck" secondAttribute="centerX" id="Q9d-df-fty"/>
+                            <constraint firstItem="fAP-gh-Z5f" firstAttribute="top" secondItem="V0s-yr-jvZ" secondAttribute="bottom" constant="8" id="bjy-Tv-cd6"/>
                             <constraint firstItem="lvs-t1-YTY" firstAttribute="centerX" secondItem="1cE-TF-Hck" secondAttribute="centerX" id="dDq-kT-92K"/>
                             <constraint firstItem="tPL-4X-UU5" firstAttribute="centerX" secondItem="1cE-TF-Hck" secondAttribute="centerX" id="qgp-eI-Qtp"/>
+                            <constraint firstItem="fAP-gh-Z5f" firstAttribute="centerX" secondItem="1cE-TF-Hck" secondAttribute="centerX" id="t1L-dI-NbN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gdf-B1-aU2"/>
                     </view>
@@ -155,6 +163,7 @@
                         <outlet property="lbActivation" destination="lvs-t1-YTY" id="PKD-Do-Siq"/>
                         <outlet property="lbBinding" destination="tPL-4X-UU5" id="XRh-I9-CLf"/>
                         <outlet property="lbFirmware" destination="V0s-yr-jvZ" id="NLd-Io-NCL"/>
+                        <outlet property="lbPitch" destination="fAP-gh-Z5f" id="jyR-vP-VhP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHh-qK-cxn" userLabel="First Responder" sceneMemberID="firstResponder"/>
