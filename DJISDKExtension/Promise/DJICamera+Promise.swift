@@ -26,8 +26,17 @@ extension DJICamera {
             }
         } else {
             return Promise {
-                self.setMode(mode, withCompletion: $0.resolve)
+                setMode(mode, withCompletion: $0.resolve)
             }
+        }
+    }
+    
+    /// Gets the camera's current work mode. Also supported by thermal imaging camera.
+    ///
+    /// - Returns: current DJICameraMode
+    public func getMode() -> Promise<DJICameraMode> {
+        return Promise {
+            getModeWithCompletion($0.resolve)
         }
     }
     
@@ -38,6 +47,15 @@ extension DJICamera {
     public func setShootPhotoMode(_ mode: DJICameraShootPhotoMode) -> Promise<Void> {
         return Promise {
             setShootPhotoMode(mode, withCompletion: $0.resolve)
+        }
+    }
+    
+    /// get the current photo shooting mode of the camera.
+    ///
+    /// - Returns: current photo shooting mode
+    public func getShootPhotoMode() -> Promise<DJICameraShootPhotoMode> {
+        return Promise {
+            getShootPhotoMode(completion: $0.resolve)
         }
     }
     
