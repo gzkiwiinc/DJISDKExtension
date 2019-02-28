@@ -12,11 +12,32 @@ extension DJICamera {
     
     /// Sets the camera's work mode to taking pictures, video, playback or download.
     ///
-    /// - Parameter mode: Camera work mode.
+    /// - Parameters:
+    ///   - mode: Camera work mode.
+    ///   - force: when camera is recording video, if force is ture, it will stop recording video and set the camera mode
     /// - Returns: Remote execution result error block.
-    public func setMode(_ mode: DJICameraMode) -> Promise<Void> {
+    public func setMode(_ mode: DJICameraMode, force: Bool = false) -> Promise<Void> {
+        let isRecording = DJISDKManager.keyManager()?.getValueFor(DJICameraKey(param: DJICameraParamIsRecording)!)?.boolValue ?? false
+        if force && isRecording {
+            return stopRecordVideo().then {
+                return Promise {
+                    self.setMode(mode, withCompletion: $0.resolve)
+                }
+            }
+        } else {
+            return Promise {
+                self.setMode(mode, withCompletion: $0.resolve)
+            }
+        }
+    }
+    
+    /// Sets the photo shooting mode for the camera.
+    ///
+    /// - Parameter mode: `DJICameraShootPhotoMode` enum value
+    /// - Returns: execution result.
+    public func setShootPhotoMode(_ mode: DJICameraShootPhotoMode) -> Promise<Void> {
         return Promise {
-            setMode(mode, withCompletion: $0.resolve)
+            setShootPhotoMode(mode, withCompletion: $0.resolve)
         }
     }
     
@@ -151,6 +172,24 @@ extension DJICamera {
     public func startShootPhoto() -> Promise<Void> {
         return Promise {
             startShootPhoto(completion: $0.resolve)
+        }
+    }
+    
+    public func stopShootPhoto() -> Promise<Void> {
+        return Promise {
+            stopShootPhoto(completion: $0.resolve)
+        }
+    }
+    
+    public func startRecordVideo() -> Promise<Void> {
+        return Promise {
+            startRecordVideo(completion: $0.resolve)
+        }
+    }
+    
+    public func stopRecordVideo() -> Promise<Void> {
+        return Promise {
+            stopRecordVideo(completion: $0.resolve)
         }
     }
     
