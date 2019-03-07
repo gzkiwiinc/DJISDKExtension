@@ -32,6 +32,7 @@
 		858DE905217974620019C314 /* DJITimelineDurationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE904217974620019C314 /* DJITimelineDurationEvent.swift */; };
 		858DE90721797A270019C314 /* DJITimelineBasicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */; };
 		8592C7A321E5D208001E1E6F /* DJIWaypointMissionState+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592C7A221E5D208001E1E6F /* DJIWaypointMissionState+Description.swift */; };
+		85BC534822310DB000D53044 /* DJIRTK+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC534722310DB000D53044 /* DJIRTK+Promise.swift */; };
 		85BCB2D021E32DA60023F1A7 /* DJIExtraWaypointMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCB2CF21E32DA60023F1A7 /* DJIExtraWaypointMission.swift */; };
 		85BCB2D221E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCB2D121E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift */; };
 		85D118C821E4862400766BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118C721E4862400766BE5 /* AppDelegate.swift */; };
@@ -120,6 +121,7 @@
 		858DE904217974620019C314 /* DJITimelineDurationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineDurationEvent.swift; sourceTree = "<group>"; };
 		858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineBasicEvent.swift; sourceTree = "<group>"; };
 		8592C7A221E5D208001E1E6F /* DJIWaypointMissionState+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJIWaypointMissionState+Description.swift"; sourceTree = "<group>"; };
+		85BC534722310DB000D53044 /* DJIRTK+Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJIRTK+Promise.swift"; sourceTree = "<group>"; };
 		85BCB2CF21E32DA60023F1A7 /* DJIExtraWaypointMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIExtraWaypointMission.swift; sourceTree = "<group>"; };
 		85BCB2D121E3462E0023F1A7 /* DJIExtraWaypointMissionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIExtraWaypointMissionTests.swift; sourceTree = "<group>"; };
 		85D118C521E4862400766BE5 /* DJIExtensionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJIExtensionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,8 +209,8 @@
 		8532A08521378F14008BCC84 /* DJISDKExtension */ = {
 			isa = PBXGroup;
 			children = (
-				8592C7A121E5D1F3001E1E6F /* CustomStringConvertible */,
 				858DE8F5217833BC0019C314 /* DJISDKExtension.podspec */,
+				8592C7A121E5D1F3001E1E6F /* CustomStringConvertible */,
 				85BEDF36219C23BF002695F8 /* KeyManager */,
 				858938AD2196D13E00AB7619 /* Extensions */,
 				858DE8F7217833E00019C314 /* DJITimeline */,
@@ -309,13 +311,14 @@
 		C0C8932D2139276300986A3A /* Promise */ = {
 			isa = PBXGroup;
 			children = (
+				85799C70221D498F0038CDBE /* DJIMissionOperator.swift */,
 				8576B048215DD17100B5B560 /* DJIGimbal+Promise.swift */,
 				C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */,
 				C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */,
 				C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */,
 				8576B04A215E330B00B5B560 /* DJIFlightController+Promise.swift */,
 				85799C6E221D42F60038CDBE /* DJIMissionControl+Promise.swift */,
-				85799C70221D498F0038CDBE /* DJIMissionOperator.swift */,
+				85BC534722310DB000D53044 /* DJIRTK+Promise.swift */,
 			);
 			path = Promise;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0C893212138DC1E00986A3A /* DJICamera+Promise.swift in Sources */,
+				85BC534822310DB000D53044 /* DJIRTK+Promise.swift in Sources */,
 				C0C8931F2138DC1E00986A3A /* DJIMediaManager+Promise.swift in Sources */,
 				85799C71221D498F0038CDBE /* DJIMissionOperator.swift in Sources */,
 				8576B049215DD17100B5B560 /* DJIGimbal+Promise.swift in Sources */,
