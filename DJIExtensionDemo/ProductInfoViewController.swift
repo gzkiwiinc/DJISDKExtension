@@ -17,6 +17,7 @@ class ProductInfoViewController: UIViewController, DJIAppActivationManagerDelega
     @IBOutlet weak var lbBinding: UILabel!
     @IBOutlet weak var lbFirmware: UILabel!
     @IBOutlet weak var lbPitch: UILabel!
+    @IBOutlet weak var lbRCSerialNumber: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,10 @@ class ProductInfoViewController: UIViewController, DJIAppActivationManagerDelega
         if let attitude = DJISDKManager.aircraft?.gimbal?.gimbalAttitude {
             lbPitch.text = String(attitude.pitch)
         }
+        
+        DJISDKManager.aircraft?.remoteController?.getSerialNumber().done {
+            self.lbRCSerialNumber.text = "RC: \($0)"
+        }.cauterize()
     }
     
     

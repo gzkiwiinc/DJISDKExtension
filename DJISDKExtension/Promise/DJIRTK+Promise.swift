@@ -21,4 +21,10 @@ extension DJIRTK {
             getEnabledWithCompletion($0.resolve)
         }
     }
+    
+    public func setReferenceStationSource(_ source: DJIRTKReferenceStationSource) -> Promise<Void> {
+        return Promise {
+            setReferenceStationSource(source, withCompletion: $0.resolve)
+        }
+    }
 }
