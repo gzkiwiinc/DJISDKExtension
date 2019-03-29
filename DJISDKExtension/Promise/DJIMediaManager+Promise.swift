@@ -31,6 +31,8 @@ extension DJIMediaManager {
                     seal.resolve(self.sdCardFileListSnapshot() ?? [], error)
                 case .unknown:
                     seal.resolve([], error)
+                @unknown default:
+                    fatalError()
                 }
             })
         }

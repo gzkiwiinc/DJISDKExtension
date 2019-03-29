@@ -8,14 +8,14 @@
 
 Pod::Spec.new do |s|
   s.name         = "DJISDKExtension"
-  s.version      = "0.4.7"
+  s.version      = "1.0.0"
   s.summary      = "Extension for DJISDK-iOS."
   s.description  = "Extension for DJISDK-iOS, only support Swift."
   s.homepage     = "https://github.com/gzkiwiinc/DJISDKExtension"
   s.license      = "MIT"
   s.authors      = { "Kyle" => "lacklock@gmail.com",
                      "Pandara" => "wen.pandara@gmail.com" }
-  s.swift_version = "4.2"
+  s.swift_version = "5.0"
   s.ios.deployment_target = "9.0"
   s.requires_arc = true
   s.xcconfig = { 'VALID_ARCHS' => 'arm64 arm64e' }
