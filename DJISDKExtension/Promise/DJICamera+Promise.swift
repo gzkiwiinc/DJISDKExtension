@@ -178,6 +178,12 @@ extension DJICamera {
         }
     }
     
+    public func setWhiteBalance(_ whiteBalance: DJICameraWhiteBalance) -> Promise<Void> {
+        return Promise {
+            setWhiteBalance(whiteBalance, withCompletion: $0.resolve)
+        }
+    }
+    
     /// Gets the storage location.
     ///
     /// - Returns: the storage location.
