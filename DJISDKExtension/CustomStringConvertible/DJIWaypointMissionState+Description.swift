@@ -29,6 +29,8 @@ extension DJIWaypointMissionState: CustomStringConvertible {
             return "recovering"
         case .uploading:
             return "uploading"
+        @unknown default:
+            return "unknown"
         }
     }
 }
