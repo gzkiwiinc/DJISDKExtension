@@ -184,6 +184,12 @@ extension DJICamera {
         }
     }
     
+    public func setColor(_ color: DJICameraColor) -> Promise<Void> {
+        return Promise {
+            setColor(color, withCompletion: $0.resolve)
+        }
+    }
+    
     /// Gets the storage location.
     ///
     /// - Returns: the storage location.
