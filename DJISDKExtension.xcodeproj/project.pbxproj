@@ -22,7 +22,7 @@
 		85799C71221D498F0038CDBE /* DJIMissionOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85799C70221D498F0038CDBE /* DJIMissionOperator.swift */; };
 		858938A32195340A00AB7619 /* DJISDKTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858938A22195340A00AB7619 /* DJISDKTimelineTests.swift */; };
 		858938A52195340A00AB7619 /* DJISDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8532A08321378F14008BCC84 /* DJISDKExtension.framework */; };
-		858938AF2196D16800AB7619 /* Camera+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858938AE2196D16800AB7619 /* Camera+Extension.swift */; };
+		858938AF2196D16800AB7619 /* CameraEnum+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858938AE2196D16800AB7619 /* CameraEnum+Extension.swift */; };
 		858938B12196D6A200AB7619 /* DJISDKExtensionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858938B02196D6A200AB7619 /* DJISDKExtensionError.swift */; };
 		858DE8F6217833BC0019C314 /* DJISDKExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 858DE8F5217833BC0019C314 /* DJISDKExtension.podspec */; };
 		858DE8F9217834560019C314 /* DJITimelineMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858DE8F8217834560019C314 /* DJITimelineMission.swift */; };
@@ -113,7 +113,7 @@
 		858938A02195340A00AB7619 /* DJISDKExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DJISDKExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		858938A22195340A00AB7619 /* DJISDKTimelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJISDKTimelineTests.swift; sourceTree = "<group>"; };
 		858938A42195340A00AB7619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		858938AE2196D16800AB7619 /* Camera+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Camera+Extension.swift"; sourceTree = "<group>"; };
+		858938AE2196D16800AB7619 /* CameraEnum+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraEnum+Extension.swift"; sourceTree = "<group>"; };
 		858938B02196D6A200AB7619 /* DJISDKExtensionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJISDKExtensionError.swift; sourceTree = "<group>"; };
 		858DE8F5217833BC0019C314 /* DJISDKExtension.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DJISDKExtension.podspec; sourceTree = SOURCE_ROOT; };
 		858DE8F8217834560019C314 /* DJITimelineMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineMission.swift; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				8523C63B21EC2AF900EE33B0 /* DJIWaypoint+Extension.swift */,
-				858938AE2196D16800AB7619 /* Camera+Extension.swift */,
+				858938AE2196D16800AB7619 /* CameraEnum+Extension.swift */,
 				85799C6C221D37750038CDBE /* DJIMissionControl+Extension.swift */,
 			);
 			path = Extensions;
@@ -594,7 +594,7 @@
 				858DE905217974620019C314 /* DJITimelineDurationEvent.swift in Sources */,
 				857324C921BE4D8300E11CA8 /* DJICameraKeyedValue+Extension.swift in Sources */,
 				853FCE602238A72C00F1605D /* DJIRTKNetworkServiceProvider+Promise.swift in Sources */,
-				858938AF2196D16800AB7619 /* Camera+Extension.swift in Sources */,
+				858938AF2196D16800AB7619 /* CameraEnum+Extension.swift in Sources */,
 				858938B12196D6A200AB7619 /* DJISDKExtensionError.swift in Sources */,
 				858DE8FF217881AE0019C314 /* DJITimelineMissionError.swift in Sources */,
 				855005E3221E748F001BEEB2 /* DJIGimbalKeyedValue+Extension.swift in Sources */,
