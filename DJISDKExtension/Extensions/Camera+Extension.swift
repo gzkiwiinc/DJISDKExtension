@@ -13,4 +13,9 @@ public extension DJICamera {
         let isoAutoValue = NSNumber(value: DJICameraISO.isoAuto.rawValue)
         return capabilities.isoRange().contains(isoAutoValue)
     }
+    
+    var isSupportShutterPriority: Bool {
+        let shutterPriorityModeValue = NSNumber(value: DJICameraExposureMode.shutterPriority.rawValue)
+        return capabilities.exposureModeRange().contains(shutterPriorityModeValue)
+    }
 }
