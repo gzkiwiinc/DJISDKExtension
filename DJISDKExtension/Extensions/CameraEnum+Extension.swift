@@ -198,11 +198,3 @@ public extension DJICameraShutterSpeed {
         }
     }
 }
-
-public extension DJICamera {
-    var isSupportAutoISO: Bool {
-        let isoAutoValue = NSNumber(value: DJICameraISO.isoAuto.rawValue)
-        guard let _ = capabilities.isoRange().firstIndex(of: isoAutoValue) else { return false }
-        return true
-    }
-}
