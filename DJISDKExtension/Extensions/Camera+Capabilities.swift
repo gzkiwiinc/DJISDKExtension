@@ -9,6 +9,7 @@
 import DJISDK
 
 public extension DJICamera {
+    
     var isSupportAutoISO: Bool {
         let isoAutoValue = NSNumber(value: DJICameraISO.isoAuto.rawValue)
         return capabilities.isoRange().contains(isoAutoValue)
@@ -17,5 +18,9 @@ public extension DJICamera {
     var isSupportShutterPriority: Bool {
         let shutterPriorityModeValue = NSNumber(value: DJICameraExposureMode.shutterPriority.rawValue)
         return capabilities.exposureModeRange().contains(shutterPriorityModeValue)
+    }
+    
+    var minimumPhotoInterval: UInt16? {
+       return capabilities.photoIntervalRange().first?.uint16Value
     }
 }
