@@ -34,9 +34,7 @@ extension DJIFollowMeMissionOperator: DJIMissionOperator {
 }
 
 extension DJITapFlyMissionOperator: DJIMissionOperator {
-    public func stopMission(completion: DJICompletionBlock?) {
-        stopMissionWtihCompletion(completion)
-    }
+    
 }
 
 extension DJIPanoramaMissionOperator: DJIMissionOperator {

@@ -12,7 +12,7 @@ import PromiseKit
 extension DJIRTK {
     public func setRTKEnabled(_ enabled: Bool) -> Promise<Void> {
         return Promise {
-            setRTKEnabled(enabled, withCompletion: $0.resolve)
+            setEnabled(enabled, withCompletion: $0.resolve)
         }
     }
     
