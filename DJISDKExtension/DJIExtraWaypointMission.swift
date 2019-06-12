@@ -219,7 +219,7 @@ public class DJIExtraWaypointMission: DJIMission {
     private func missionFinished() {
         if currentMissionIndex == waypointMissions.count - 1 {
             if let distance = self.distanceFromEndPoint(),
-                distance < 5 {
+                distance < 10 { // 无人机飞向最后一个点，还剩下 10 米，也判断为任务完成
                 delegate?.waypointMissionDidFinished()
                 DJISDKManager.missionControl()?.waypointMissionOperator().removeListener(self)
             } else {
