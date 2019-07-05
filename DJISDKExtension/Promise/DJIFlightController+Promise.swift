@@ -24,4 +24,10 @@ extension DJIFlightController {
             send(data, withCompletion: $0.resolve)
         }
     }
+    
+    public func startGoHome() -> Promise<Void> {
+        return Promise {
+            startGoHome(completion: $0.resolve)
+        }
+    }
 }
