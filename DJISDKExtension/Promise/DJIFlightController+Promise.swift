@@ -30,4 +30,11 @@ extension DJIFlightController {
             startGoHome(completion: $0.resolve)
         }
     }
+    
+    /// Gets the low battery warning threshold as a percentage.
+    public func getLowBatteryWarningThreshold() -> Promise<UInt8> {
+        return Promise {
+            getLowBatteryWarningThreshold(completion: $0.resolve)
+        }
+    }
 }
