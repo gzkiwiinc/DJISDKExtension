@@ -52,4 +52,13 @@ extension DJIFlightController {
             setLowBatteryWarningThreshold(percent, withCompletion: $0.resolve)
         }
     }
+    
+    /// Sets the serious low battery warning threshold as a percentage. The minimum
+    ///  value is 10. The maximum value is value from
+    ///  `getLowBatteryWarningThresholdWithCompletion` minus 5.
+    public func setSeriousLowBatteryWarningThreshold(_ percent: UInt8) -> Promise<Void> {
+        return Promise {
+            setSeriousLowBatteryWarningThreshold(percent, withCompletion: $0.resolve)
+        }
+    }
 }
