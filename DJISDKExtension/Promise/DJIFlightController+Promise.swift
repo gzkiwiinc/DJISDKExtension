@@ -37,4 +37,11 @@ extension DJIFlightController {
             getLowBatteryWarningThreshold(completion: $0.resolve)
         }
     }
+    
+    /// Gets the serious low battery warning threshold in percentage.
+    public func getSeriousLowBatteryWarningThreshold() -> Promise<UInt8> {
+        return Promise {
+            getSeriousLowBatteryWarningThreshold(completion: $0.resolve)
+        }
+    }
 }
