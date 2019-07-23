@@ -22,11 +22,37 @@ extension DJIMissionOperator {
 }
 
 extension DJIWaypointMissionOperator: DJIMissionOperator {
+    public func pauseMission() -> Promise<Void> {
+        return Promise { seal in
+            pauseMission(completion: seal.resolve)
+        }
+    }
     
+    public func resumeMission() -> Promise<Void> {
+        return Promise { seal in
+            resumeMission(completion: seal.resolve)
+        }
+    }
 }
 
 extension DJIHotpointMissionOperator: DJIMissionOperator {
+    public func startMission(_ mission: DJIHotpointMission) -> Promise<Void> {
+        return Promise { seal in
+            start(mission, withCompletion: seal.resolve)
+        }
+    }
     
+    public func pauseMission() -> Promise<Void> {
+        return Promise { seal in
+            pauseMission(completion: seal.resolve)
+        }
+    }
+
+    public func resumeMission() -> Promise<Void> {
+        return Promise { seal in
+            resumeMission(completion: seal.resolve)
+        }
+    }
 }
 
 extension DJIFollowMeMissionOperator: DJIMissionOperator {
