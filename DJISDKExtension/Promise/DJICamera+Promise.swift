@@ -190,6 +190,18 @@ extension DJICamera {
         }
     }
     
+    public func setVideoFileFormat(_ fileFormat: DJICameraVideoFileFormat) -> Promise<Void> {
+        return Promise {
+            setVideoFileFormat(fileFormat, withCompletion: $0.resolve)
+        }
+    }
+    
+    public func setVideoResolutionAndFrameRate(_ resolutionAndFrameRate: DJICameraVideoResolutionAndFrameRate) -> Promise<Void> {
+        return Promise {
+            setVideoResolutionAndFrameRate(resolutionAndFrameRate, withCompletion: $0.resolve)
+        }
+    }
+    
     /// Gets the storage location.
     ///
     /// - Returns: the storage location.
