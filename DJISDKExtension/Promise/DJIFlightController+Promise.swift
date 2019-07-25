@@ -31,6 +31,18 @@ extension DJIFlightController {
         }
     }
     
+    public func setGoHomeHeightInMeters(height: UInt) -> Promise<Void> {
+        return Promise {
+            setGoHomeHeightInMeters(height, withCompletion: $0.resolve)
+        }
+    }
+    
+    public func cancelGoHome() -> Promise<Void> {
+        return Promise {
+            cancelGoHome(completion: $0.resolve)
+        }
+    }
+    
     /// Gets the low battery warning threshold as a percentage.
     public func getLowBatteryWarningThreshold() -> Promise<UInt8> {
         return Promise {
