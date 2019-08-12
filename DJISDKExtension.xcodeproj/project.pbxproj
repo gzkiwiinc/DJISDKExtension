@@ -50,6 +50,7 @@
 		C0C893202138DC1E00986A3A /* DJIMediaFile+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */; };
 		C0C893212138DC1E00986A3A /* DJICamera+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */; };
 		C2029830228917F200E06974 /* Camera+Capabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C202982F228917F200E06974 /* Camera+Capabilities.swift */; };
+		C231973623013FFF00AE4065 /* DJIKeyManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231973523013FFF00AE4065 /* DJIKeyManager+Extension.swift */; };
 		CEDD008B2A270B813EDAF365 /* Pods_DJISDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C952EE09E10AC625517DE64 /* Pods_DJISDKExtension.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +145,7 @@
 		C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaFile+Promise.swift"; sourceTree = "<group>"; };
 		C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJICamera+Promise.swift"; sourceTree = "<group>"; };
 		C202982F228917F200E06974 /* Camera+Capabilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Camera+Capabilities.swift"; sourceTree = "<group>"; };
+		C231973523013FFF00AE4065 /* DJIKeyManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJIKeyManager+Extension.swift"; sourceTree = "<group>"; };
 		F5862A3BA13CABF34FD11F07 /* Pods-DJISDKExtensionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKExtensionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKExtensionTests/Pods-DJISDKExtensionTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,6 +280,7 @@
 			children = (
 				857324C821BE4D8300E11CA8 /* DJICameraKeyedValue+Extension.swift */,
 				855005E2221E748F001BEEB2 /* DJIGimbalKeyedValue+Extension.swift */,
+				C231973523013FFF00AE4065 /* DJIKeyManager+Extension.swift */,
 			);
 			path = KeyManager;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				C0C893212138DC1E00986A3A /* DJICamera+Promise.swift in Sources */,
 				85BC534822310DB000D53044 /* DJIRTK+Promise.swift in Sources */,
 				C0C8931F2138DC1E00986A3A /* DJIMediaManager+Promise.swift in Sources */,
+				C231973623013FFF00AE4065 /* DJIKeyManager+Extension.swift in Sources */,
 				85799C71221D498F0038CDBE /* DJIMissionOperator.swift in Sources */,
 				85AC82F72241DA88003700B9 /* DJIBaseComponent+Promise.swift in Sources */,
 				8576B049215DD17100B5B560 /* DJIGimbal+Promise.swift in Sources */,
