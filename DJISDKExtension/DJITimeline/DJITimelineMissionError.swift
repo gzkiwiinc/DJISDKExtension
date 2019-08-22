@@ -12,6 +12,9 @@ public enum DJITimelineMissionError: LocalizedError {
     case aircraftStateError(String)
     
     public var errorDescription: String? {
-        return "Cant't get aircraft state"
+        switch self {
+        case .aircraftStateError(let description):
+            return "AircraftState Error: \(description)"
+        }
     }
 }
