@@ -196,6 +196,12 @@ extension DJICamera {
         }
     }
     
+    public func setVideoStandard(_ standard: DJICameraVideoStandard) -> Promise<Void> {
+        return Promise {
+            setVideoStandard(standard, withCompletion: $0.resolve)
+        }
+    }
+    
     public func setVideoResolutionAndFrameRate(_ resolutionAndFrameRate: DJICameraVideoResolutionAndFrameRate) -> Promise<Void> {
         return Promise {
             setVideoResolutionAndFrameRate(resolutionAndFrameRate, withCompletion: $0.resolve)
