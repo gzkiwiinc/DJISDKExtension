@@ -12,7 +12,12 @@ public extension DJICamera {
     
     var isSupportAutoISO: Bool {
         let isoAutoValue = NSNumber(value: DJICameraISO.isoAuto.rawValue)
-        return capabilities.isoRange().contains(isoAutoValue)
+        let isoRange = capabilities.isoRange()
+        if isoRange.count == 1
+         , isoRange[0] == isoAutoValue {
+            return false
+        }
+        return isoRange.contains(isoAutoValue)
     }
     
     var isSupportShutterPriority: Bool {

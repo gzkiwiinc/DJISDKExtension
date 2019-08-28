@@ -23,4 +23,21 @@ extension DJIRTKNetworkServiceProvider {
         }
     }
 
+    public func setNetworkServiceCoordinateSystem(_ coordinateSystem: DJIRTKNetworkServiceCoordinateSystem) -> Promise<Void> {
+        return Promise {
+            setNetworkServiceCoordinateSystem(coordinateSystem, completion: $0.resolve)
+        }
+    }
+    
+    public func getNetworkServiceOrderPlans() -> Promise<DJIRTKNetworkServicePlansState> {
+        return Promise { seal in
+            getNetworkServiceOrderPlans(completion: { (plans, error) in
+                if error != nil  {
+                    seal.reject(error)
+                } else {
+                    seal.fulfill(plans)
+                }
+            })
+        }
+    }
 }
