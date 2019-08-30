@@ -46,6 +46,7 @@
 		85D118DF21E48A5300766BE5 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118DE21E48A5300766BE5 /* RootTableViewController.swift */; };
 		85D118E121E49A9F00766BE5 /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118E021E49A9F00766BE5 /* ProductInfoViewController.swift */; };
 		85D118E321E49E2A00766BE5 /* ExtraWaypointMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D118E221E49E2A00766BE5 /* ExtraWaypointMissionViewController.swift */; };
+		C03FB0F02318A94A00EE8C10 /* DJITimelineAELockEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB0EF2318A94A00EE8C10 /* DJITimelineAELockEvent.swift */; };
 		C0C8931F2138DC1E00986A3A /* DJIMediaManager+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */; };
 		C0C893202138DC1E00986A3A /* DJIMediaFile+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */; };
 		C0C893212138DC1E00986A3A /* DJICamera+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */; };
@@ -141,6 +142,7 @@
 		85D118E221E49E2A00766BE5 /* ExtraWaypointMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraWaypointMissionViewController.swift; sourceTree = "<group>"; };
 		9CBCCC308A30FD9AF5FA77BD /* Pods-DJIExtensionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJIExtensionDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJIExtensionDemo/Pods-DJIExtensionDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B763E7869565DCA034F402A8 /* Pods-DJISDKExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKExtension/Pods-DJISDKExtension.release.xcconfig"; sourceTree = "<group>"; };
+		C03FB0EF2318A94A00EE8C10 /* DJITimelineAELockEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJITimelineAELockEvent.swift; sourceTree = "<group>"; };
 		C0C8931C2138DC1D00986A3A /* DJIMediaManager+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaManager+Promise.swift"; sourceTree = "<group>"; };
 		C0C8931D2138DC1D00986A3A /* DJIMediaFile+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIMediaFile+Promise.swift"; sourceTree = "<group>"; };
 		C0C8931E2138DC1E00986A3A /* DJICamera+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJICamera+Promise.swift"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				858DE900217882720019C314 /* DJITimelineGimbalRotateEvent.swift */,
 				858DE9022178D6340019C314 /* DJITimelineShootPhotoEvent.swift */,
 				858DE904217974620019C314 /* DJITimelineDurationEvent.swift */,
+				C03FB0EF2318A94A00EE8C10 /* DJITimelineAELockEvent.swift */,
 				858DE90621797A270019C314 /* DJITimelineBasicEvent.swift */,
 			);
 			path = DJITimeline;
@@ -604,6 +607,7 @@
 				853FCE602238A72C00F1605D /* DJIRTKNetworkServiceProvider+Promise.swift in Sources */,
 				858938AF2196D16800AB7619 /* CameraEnum+Extension.swift in Sources */,
 				858938B12196D6A200AB7619 /* DJISDKExtensionError.swift in Sources */,
+				C03FB0F02318A94A00EE8C10 /* DJITimelineAELockEvent.swift in Sources */,
 				858DE8FF217881AE0019C314 /* DJITimelineMissionError.swift in Sources */,
 				855005E3221E748F001BEEB2 /* DJIGimbalKeyedValue+Extension.swift in Sources */,
 				8523C63C21EC2AF900EE33B0 /* DJIWaypoint+Extension.swift in Sources */,
