@@ -31,7 +31,7 @@ public struct DJIGimbalRotateEvent: DJITimelineEvent, CustomDebugStringConvertib
             var timeoutCount = 0
             func rotateGimbalAction() {
                 gimbal.rotate(with: rotation, completion: { (error) in
-                    guard error != nil else { return seal.reject(error!) }
+                    guard error == nil else { return seal.reject(error!) }
                     // After the successful execution of the gimbal command, the Angle check is carried out after a delay of some time (The delay time includes the time for the gimbal to rotate and 0.5s program delay)
                     DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + self.rotation.time + 0.5) {
                         guard let attitude =  gimbal.gimbalAttitude else {
