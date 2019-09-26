@@ -11,7 +11,7 @@ import DJISDK
 import SVProgressHUD
 
 class RootTableViewController: UITableViewController, DJISDKManagerDelegate {
-    
+
     @IBOutlet weak var productInfoLabel: UILabel!
     
     override func viewDidLoad() {
@@ -35,5 +35,9 @@ class RootTableViewController: UITableViewController, DJISDKManagerDelegate {
     
     func productDisconnected() {
         productInfoLabel.text = "disconnect"
+    }
+    
+    func didUpdateDatabaseDownloadProgress(_ progress: Progress) {
+        
     }
 }
