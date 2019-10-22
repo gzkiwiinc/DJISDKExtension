@@ -32,10 +32,10 @@ extension DJIRTKNetworkServiceProvider {
     public func getNetworkServiceOrderPlans() -> Promise<DJIRTKNetworkServicePlansState> {
         return Promise { seal in
             getNetworkServiceOrderPlans(completion: { (plans, error) in
-                if error != nil  {
-                    seal.reject(error)
-                } else {
+                if plans != nil {
                     seal.fulfill(plans)
+                } else if error != nil {
+                    seal.reject(error)
                 }
             })
         }
