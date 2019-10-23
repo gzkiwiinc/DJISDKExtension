@@ -32,12 +32,21 @@ extension DJIRTKNetworkServiceProvider {
     public func getNetworkServiceOrderPlans() -> Promise<DJIRTKNetworkServicePlansState> {
         return Promise { seal in
             getNetworkServiceOrderPlans(completion: { (plans, error) in
-                if plans != nil {
-                    seal.fulfill(plans)
-                } else if error != nil {
+                let nullableError = OCNilContainer(error)
+                if let _ = nullableError.value {
                     seal.reject(error)
+                } else {
+                    seal.fulfill(plans)
                 }
             })
         }
+    }
+}
+
+fileprivate class OCNilContainer<T> {
+    var value: T?
+    
+    init(_ value: T?) {
+        self.value = value
     }
 }
