@@ -28,6 +28,7 @@ public struct DJITimelineAircraftYawEvent: DJITimelineEvent {
               let originYaw = (attitudeValue as? DJISDKVector3D)?.z else {
                 return Promise(error: DJITimelineMissionError.aircraftStateError("Get current yaw value failed"))
         }
+        let targetYaw = Double(controlData.yaw)
         return Promise { seal in
             var timeoutCount = 0
             func sendControlData() {
@@ -39,12 +40,15 @@ public struct DJITimelineAircraftYawEvent: DJITimelineEvent {
                             let currentYaw = (attitudeValue as? DJISDKVector3D)?.z else {
                                 return seal.reject(DJITimelineMissionError.aircraftStateError("Get current yaw value failed"))
                         }
-                        if fabs(currentYaw - originYaw) > 1 { //确定飞机执行旋转指令之后才进行下一步，否则0.1秒后重新发送指令
+                        let diff = abs(targetYaw - currentYaw)
+                        // difference between targetYaw and currentYaw less than 2 meet the expected, or will retry after 0.1s
+                        if abs(diff) <= 2 {
                             seal.fulfill(())
                         } else {
                             DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 0.1, execute: {
                                 timeoutCount += 1
-                                if timeoutCount > 15 {
+                                // The actual test found that 25 times is almost appropriate
+                                if timeoutCount > 25 {
                                     seal.reject(DJITimelineMissionError.aircraftStateError("change aircraft yaw timeout"))
                                 } else {
                                     sendControlData()
