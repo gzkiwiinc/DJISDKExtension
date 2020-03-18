@@ -208,6 +208,12 @@ extension DJICamera {
         }
     }
     
+    public func setVideoDewarpingEnabled(_ enable: Bool) -> Promise<Void> {
+        return Promise {
+            setVideoDewarpingEnabled(enable, withCompletion: $0.resolve)
+        }
+    }
+    
     /// Gets the storage location.
     ///
     /// - Returns: the storage location.
