@@ -59,6 +59,14 @@ extension DJICamera {
         }
     }
     
+    /// Sets the interval shoot parameters.
+    /// - Parameter settings: DJICameraPhotoTimeIntervalSettings
+    public func setPhotoTimeIntervalSettings(_ settings: DJICameraPhotoTimeIntervalSettings) -> Promise<Void> {
+        return Promise {
+            setPhotoTimeIntervalSettings(settings, withCompletion: $0.resolve)
+        }
+    }
+    
     /// Sets the camera's photo file format
     public func setPhotoFileFormat(_ format: DJICameraPhotoFileFormat) -> Promise<Void> {
         return Promise {
