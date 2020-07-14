@@ -40,7 +40,8 @@ public struct DJITimelineAircraftYawEvent: DJITimelineEvent {
                             let currentYaw = (attitudeValue as? DJISDKVector3D)?.z else {
                                 return seal.reject(DJITimelineMissionError.aircraftStateError("Get current yaw value failed"))
                         }
-                        let diff = abs(targetYaw - currentYaw)
+                        // execute abs for targetYaw and currentYaw respectively before calculate diff
+                        let diff = abs(targetYaw) - abs(currentYaw)
                         // difference between targetYaw and currentYaw less than 2 meet the expected, or will retry after 0.1s
                         if abs(diff) <= 2 {
                             seal.fulfill(())

@@ -59,6 +59,14 @@ extension DJICamera {
         }
     }
     
+    /// Sets the interval shoot parameters.
+    /// - Parameter settings: DJICameraPhotoTimeIntervalSettings
+    public func setPhotoTimeIntervalSettings(_ settings: DJICameraPhotoTimeIntervalSettings) -> Promise<Void> {
+        return Promise {
+            setPhotoTimeIntervalSettings(settings, withCompletion: $0.resolve)
+        }
+    }
+    
     /// Sets the camera's photo file format
     public func setPhotoFileFormat(_ format: DJICameraPhotoFileFormat) -> Promise<Void> {
         return Promise {
@@ -70,6 +78,12 @@ extension DJICamera {
     public func setFoucusMode(_ mode: DJICameraFocusMode) -> Promise<Void> {
         return Promise {
             setFocusMode(mode, withCompletion: $0.resolve)
+        }
+    }
+    
+    public func setFoucusRingValue(_ value: UInt) -> Promise<Void> {
+        return Promise {
+            setFocusRingValue(value, withCompletion: $0.resolve)
         }
     }
     
@@ -205,6 +219,12 @@ extension DJICamera {
     public func setVideoResolutionAndFrameRate(_ resolutionAndFrameRate: DJICameraVideoResolutionAndFrameRate) -> Promise<Void> {
         return Promise {
             setVideoResolutionAndFrameRate(resolutionAndFrameRate, withCompletion: $0.resolve)
+        }
+    }
+    
+    public func setVideoDewarpingEnabled(_ enable: Bool) -> Promise<Void> {
+        return Promise {
+            setVideoDewarpingEnabled(enable, withCompletion: $0.resolve)
         }
     }
     

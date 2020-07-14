@@ -54,6 +54,10 @@ extension DJICamera {
         return getEnumValue(cameraKey: DJICameraParamPhotoFileFormat) ?? .unknown
     }
     
+    public var photoAspectRatio: DJICameraPhotoAspectRatio {
+        return getEnumValue(cameraKey: DJICameraParamPhotoAspectRatio) ?? .ratioUnknown
+    }
+    
     public var videoFileFormat: DJICameraVideoFileFormat {
         return getEnumValue(cameraKey: DJICameraParamVideoFileFormat) ?? .unknown
     }
