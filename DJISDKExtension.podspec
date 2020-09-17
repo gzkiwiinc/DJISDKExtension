@@ -18,7 +18,8 @@ Pod::Spec.new do |s|
   s.swift_version = "5.0"
   s.ios.deployment_target = "10.0"
   s.requires_arc = true
-  s.xcconfig = { 'EXCLUDED_ARCHS' => 'i386'}
+  s.xcconfig = { 'EXCLUDED_ARCHS' => 'i386',
+                 'ONLY_ACTIVE_ARCH' => 'YES'}
 
   s.source       = { :git => "https://github.com/gzkiwiinc/DJISDKExtension.git", :tag => "#{s.version}" }
   s.source_files  = "DJISDKExtension/*.swift", "DJISDKExtension/**/*.swift"
