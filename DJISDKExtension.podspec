@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/gzkiwiinc/DJISDKExtension.git", :tag => "#{s.version}" }
   s.source_files  = "DJISDKExtension/*.swift", "DJISDKExtension/**/*.swift"
 
-  s.dependency "DJI-SDK-iOS", "~> 4.11.0"
+  s.dependency "DJI-SDK-iOS"
   s.dependency "PromiseKit"
 
 end

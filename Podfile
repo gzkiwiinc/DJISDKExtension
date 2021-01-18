@@ -2,7 +2,7 @@ platform :ios, '11.0'
 inhibit_all_warnings!
 
 def share_pods
-  pod 'DJI-SDK-iOS'
+  pod 'DJI-SDK-iOS', '4.14-trial2'
   pod 'PromiseKit'
 end
 
