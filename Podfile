@@ -1,25 +1,25 @@
 platform :ios, '11.0'
 inhibit_all_warnings!
 
+def share_pods
+  pod 'DJI-SDK-iOS'
+  pod 'PromiseKit'
+end
+
 target 'DJISDKExtension' do
   use_frameworks!
 
-  pod 'DJI-SDK-iOS', '~> 4.11.0'
-  pod 'PromiseKit'
+  share_pods
   
   target 'DJISDKExtensionTests' do
       inherit! :search_paths
-      pod 'DJI-SDK-iOS', '~> 4.11.0'
-      pod 'PromiseKit'
+      share_pods
   end
 
 end
 
 target 'DJIExtensionDemo' do
   use_frameworks!
-  
+  share_pods
   pod 'SVProgressHUD'
-  pod 'DJI-SDK-iOS', '~> 4.11.0'
-  pod 'PromiseKit'
-  
 end
