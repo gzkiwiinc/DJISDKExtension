@@ -267,7 +267,35 @@ extension DJICamera {
         }
     }
     
-    // MARK: Custom
+    // MARK: - Flat Camera Mode
+    
+    /// Sets the camera's flat mode to take photo, record video, or enter intelligent camera modes. Please note that you cannot change the mode when a certain task is executing. This is available only when isFlatCameraModeSupported returns YES.
+    public func setFlatMode(_ mode: DJIFlatCameraMode) -> Promise<Void> {
+        return Promise {
+            setFlatMode(mode, withCompletion: $0.resolve)
+        }
+    }
+    
+    public func getFlatMode() -> Promise<DJIFlatCameraMode> {
+        return Promise {
+            getFlatMode(completion: $0.resolve)
+        }
+    }
+    
+    /// Enter playback mode, in which users can preview photos or videos, begin the video playback, and download media to the mobile device. This is available only when isFlatCameraModeSupported returns YES. Please note that only after exiting playback mode, last flat camera mode will be recovered.
+    public func enterPlaybackMode() -> Promise<Void> {
+        return Promise {
+            enterPlayback(completion: $0.resolve)
+        }
+    }
+    
+    public func exitPlaybackMode() -> Promise<Void> {
+        return Promise {
+            exitPlayback(completion: $0.resolve)
+        }
+    }
+    
+    // MARK: - Custom
     
     /// get current expoureSetting, using it to lock exposure
     public func setAELockContinuous() -> Promise<Void> {
